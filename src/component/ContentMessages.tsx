@@ -1,12 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import { messages } from "../messages";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
+import { AppContext } from "../Context/context";
 
-function JunneMessages() {
+function ContentMessages() {
+
+  const context = useContext(AppContext);
  
   const {params} = useParams();
-  console.log("%c 🙎‍♀️: JunneMessages -> params ", "font-size:16px;background-color:#ba2f7e;color:white;", params)
+  console.log("%c 🙎‍♀️: ContentMessages -> params ", "font-size:16px;background-color:#ba2f7e;color:white;", params)
   // const id = params.id;
 
   // const data = messages.find(msg => msg.id === id)
@@ -14,21 +17,20 @@ function JunneMessages() {
     <div>
       <StyledMessages className="messages">
         <StyledMessage className="message">
-          {messages.map((message) => (
+          {/* {messages.map((message) => ())} */}
             <StyledMsgContent className="msg_content">
               <StyledMessageIconButton
                 src="../imgs/hacker.png"
                 alt="Hacker Icon"
               />
               <StyledText className="text">
-                <StyledP>{message?.user_name}</StyledP>
-                <p>{}</p>
+                <StyledP>{}</StyledP>
+                <p>{context.state.message}</p>
               </StyledText>
               <div className="message-time">
                 <StyledTime className="time">{}</StyledTime>
               </div>
             </StyledMsgContent>
-          ))}
         </StyledMessage>
       </StyledMessages>
     </div>
@@ -73,4 +75,4 @@ const StyledTime = styled.p`
   font-size: 12px;
   color: rgb(0,0,0, 0.5);
 `
-export default JunneMessages;
+export default ContentMessages;

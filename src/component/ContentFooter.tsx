@@ -2,12 +2,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-function ContentFooter() {
-  const [message, setMessage] = useState("");
+interface PropTypes {
+  inputValue?: string;
+  message?: string;
+}
+function ContentFooter(props: PropTypes) {
+  const initState ={
+    inputValue: '',
+    message: props.message,
+  };
+  const [message, setMessage] = useState(initState);
 
-  let handleSubmit = (event: any) => {
-    const newVal = event.target.value;
-    setMessage(newVal);
+  const submitMessage = () => {
+    setMessage({
+      ...message,
+      message: message.inputValue,
+    });
   };
   return (
     <StyledFooter className="content-footer">
@@ -47,13 +57,19 @@ function ContentFooter() {
         </StyledButton>
       </StyledFooterIcons>
       <StlyedTextarea>
+        {message.message}
         <StyledTextArea
           name=""
           id=""
           placeholder="Message"
-          onChange={(e) => [e.target.value]}
+          onChange={(e) => {
+            setMessage({
+              ...message,
+              inputValue: e.target.value
+            })
+          }}
         ></StyledTextArea>
-        <StyledButton onClick={handleSubmit}>
+        <StyledButton onClick={submitMessage}>
           <StyledIconButtonRight src="../imgs/send.png" alt="Send Icon" />
           {/* <i className="fa-solid fa-paper-plane"></i> */}
         </StyledButton>
