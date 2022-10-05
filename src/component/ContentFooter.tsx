@@ -1,14 +1,25 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import styled from "styled-components";
+import add_text from '../imgs/add-text.png';
+import clip from '../imgs/clip.png';
+import smile from '../imgs/smile.png';
+import gif from '../imgs/gif.png';
+import check_mark from '../imgs/check-mark.png';
+import calendar from '../imgs/calendar.png';
+import web_programming from '../imgs/web-programming.png';
+import send from '../imgs/send.png';
+
+
+
 
 interface PropTypes {
   inputValue?: string;
   message?: string;
 }
 function ContentFooter(props: PropTypes) {
-  const initState ={
-    inputValue: '',
+  const initState = {
+    inputValue: "",
     message: props.message,
   };
   const [message, setMessage] = useState(initState);
@@ -24,34 +35,34 @@ function ContentFooter(props: PropTypes) {
       <StyledFooterIcons className="icons">
         <StyledButton>
           <StyledFooterIconButton
-            src="../imgs/add-text.png"
+            src={add_text}
             alt="Addtext Icon"
           />
         </StyledButton>
         <StyledButton>
-          <StyledFooterIconButton src="../imgs/clip.png" alt="Clip Icon" />
+          <StyledFooterIconButton src={clip} alt="Clip Icon" />
         </StyledButton>
         <StyledButton>
-          <StyledFooterIconButton src="../imgs/smile.png" alt="Smile Icon" />
+          <StyledFooterIconButton src={smile} alt="Smile Icon" />
         </StyledButton>
         <StyledButton>
-          <StyledFooterIconButton src="../imgs/gif.png" alt="Gif Icon" />
+          <StyledFooterIconButton src={gif} alt="Gif Icon" />
         </StyledButton>
         <StyledButton>
           <StyledFooterIconButton
-            src="../imgs/check-mark.png"
+            src={check_mark}
             alt="Checkmark Icon"
           />
         </StyledButton>
         <StyledButton>
           <StyledFooterIconButton
-            src="../imgs/calendar.png"
+            src={calendar}
             alt="Calendar Icon"
           />
         </StyledButton>
         <StyledButton>
           <StyledFooterIconButton
-            src="../imgs/web-programming.png"
+            src={web_programming}
             alt="Web programming Icon"
           />
         </StyledButton>
@@ -65,13 +76,12 @@ function ContentFooter(props: PropTypes) {
           onChange={(e) => {
             setMessage({
               ...message,
-              inputValue: e.target.value
-            })
+              inputValue: e.target.value,
+            });
           }}
         ></StyledTextArea>
         <StyledButton onClick={submitMessage}>
-          <StyledIconButtonRight src="../imgs/send.png" alt="Send Icon" />
-          {/* <i className="fa-solid fa-paper-plane"></i> */}
+          <StyledIconButtonRight src={send} alt="Send Icon" />
         </StyledButton>
       </StlyedTextarea>
     </StyledFooter>

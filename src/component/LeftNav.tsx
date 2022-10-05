@@ -6,50 +6,46 @@ import { FaPuzzlePiece } from "react-icons/fa";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { GoMention } from "react-icons/go";
 
+
 function LeftNav() {
+  const context = useContext(AppContext);
 
-  const context = useContext(AppContext)
-
-  const { setState, state } = context
+  const { setState, state } = context;
 
   const users = [
     { name: "Jean Pretzy Rim", id: 1 },
-    { name: "Junne Toral", id: 2},
+    { name: "Junne Toral", id: 2 },
     { name: "Leslie Marie Reyes", id: 3 },
     { name: "Philip John Batulan", id: 4 },
     { name: "Juphet Vitualla", id: 5 },
   ];
 
   const teams = [
-    { team: "TEAMBANGAN-weighs", team_id: 1, },
-    { team: ".{dna:micro}.", team_id: 2, },
-    { team: "WFH", team_id: 3, },
-    { team: "All Employees", team_id: 4, },
-    { team: "Team Vitamins", team_id: 5, },
+    { team: "TEAMBANGAN-weighs", team_id: 1 },
+    { team: ".{dna:micro}.", team_id: 2 },
+    { team: "WFH", team_id: 3 },
+    { team: "All Employees", team_id: 4 },
+    { team: "Team Vitamins", team_id: 5 },
   ];
 
   const handlePressTeams = (id: number) => {
-    setState(
-      {
-        ...state, 
-        activeMessage:{
-          id: id, 
-          type: 'team'
-        }
-      }
-    )
-  }
+    setState({
+      ...state,
+      activeMessage: {
+        id: id,
+        type: "team",
+      },
+    });
+  };
   const handlePressUser = (id: number) => {
-    setState(
-      {
-        ...state, 
-        activeMessage:{
-          id: id, 
-          type: 'direct'
-        }
-      }
-    )
-  }
+    setState({
+      ...state,
+      activeMessage: {
+        id: id,
+        type: "direct",
+      },
+    });
+  };
 
   return (
     <div>
@@ -105,54 +101,58 @@ function LeftNav() {
           <StyledShowUnread>
             <StyledP>Show Unread</StyledP>
             <StyledShowUnreadIcon
-              src="../imgs/off-button.png"
+              src={off_button}
               alt="Off button Icon"
             />
           </StyledShowUnread>
 
           <StyledUsers className="users">
             <StyledDirectMessageButton>
-              <StyledIconButton2 src="../imgs/user.png" alt="User Icon" />
+              <StyledIconButton2 src={user} alt="User Icon" />
               DIRECT MESSAGES
             </StyledDirectMessageButton>
             <StyledUser className="user">
               <ul>
                 {users.map((user) => (
                   <StyledUserli>
-                    <StyledUserA 
+                    <StyledUserA
                       onClick={() => {
-                        handlePressUser(user.id)
-                      }} 
-                      href="#">
-                        {user.name}
+                        handlePressUser(user.id);
+                      }}
+                      href="#"
+                    >
+                      {user.name}
                     </StyledUserA>
                   </StyledUserli>
                 ))}
               </ul>
-              <StyledIconButtonMenu src="../imgs/menu.png" alt="Menu Icon" />
+              <StyledIconButtonMenu src={menu} alt="Menu Icon" />
             </StyledUser>
             <StyledDirectMessageButton>
-              <StyledIconButton2 src="../imgs/teams.png" alt="Teams Icon" />
+              <StyledIconButton2 src={team} alt="Teams Icon" />
               TEAMS
             </StyledDirectMessageButton>
             <StyledUser className="user">
               <ul>
                 {teams.map((team) => (
                   <StyledUserli>
-                    <StyledUserA 
+                    <StyledUserA
                       onClick={() => {
-                        handlePressTeams(team.team_id)
-                      }} 
-                      href="#">{team.team}</StyledUserA>
+                        handlePressTeams(team.team_id);
+                      }}
+                      href="#"
+                    >
+                      {team.team}
+                    </StyledUserA>
                   </StyledUserli>
                 ))}
               </ul>
-              <StyledIconButtonMenu src="../imgs/menu.png" alt="Menu Icon" />
+              <StyledIconButtonMenu src={menu} alt="Menu Icon" />
             </StyledUser>
           </StyledUsers>
 
           <StyledNewFolder>
-            <StyledNewFolderIcon src="../imgs/add.png" alt="Add folder Icon" />
+            <StyledNewFolderIcon src={add} alt="Add folder Icon" />
             <StyledP>New Folder</StyledP>
           </StyledNewFolder>
         </StyledCol2>

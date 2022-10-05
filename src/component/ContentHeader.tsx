@@ -1,5 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import startIcon from '../imgs/star.png';
+import padlock from '../imgs/padlock.png';
+import account from '../imgs/account.png';
+import videocamera from '../imgs/video-camera.png';
+import menu from '../imgs/menu.png';
+
 function ContentHeader() {
   return (
     <StyledContentHeader className="content-header">
@@ -7,25 +13,25 @@ function ContentHeader() {
         <StyledIconsLeft className="icons-left">
           <StyledP>TEAMBANGAN-weighs</StyledP>
           <StyledButton>
-            <StyledIconButton src="../imgs/star.png" alt="Star Icon" />
+            <StyledIconButton src={startIcon} alt="Star Icon" />
           </StyledButton>
           <StyledButton>
-            <StyledIconButton src="../imgs/padlock.png" alt="Padlock Icon" />
+            <StyledIconButton src={padlock} alt="Padlock Icon" />
           </StyledButton>
           <StyledButton>
-            <StyledIconButton src="../imgs/account.png" alt="Acount Icon" />
+            <StyledIconButton src={account} alt="Acount Icon" />
           </StyledButton>
         </StyledIconsLeft>
 
         <StyledIconsRight className="icons-right">
           <StyledButton>
             <StyledIconButtonRight
-              src="../imgs/video-camera.png"
+              src={videocamera}
               alt="Video Camera Icon"
             />
           </StyledButton>
           <StyledButton>
-            <StyledIconButtonRight src="../imgs/menu.png" alt="Menu Icon" />
+            <StyledIconButtonRight src={menu} alt="Menu Icon" />
           </StyledButton>
         </StyledIconsRight>
       </StyledHeader>
