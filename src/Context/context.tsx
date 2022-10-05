@@ -7,6 +7,10 @@ function Context(props: any) {
    const contextValue = {
     inputValue: '',
     message: props.message,
+    activeMessage: {
+      id: 0,
+      type: ''
+    }
    }
 
    const [state, setState] = useState(contextValue)

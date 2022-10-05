@@ -1,36 +1,57 @@
-import React, {useContext} from "react";
-import { messages } from "../messages";
+import React, {useContext, useEffect} from "react";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
+import {messages, directMessages} from '../messages'
 import { AppContext } from "../Context/context";
 
 function ContentMessages() {
 
   const context = useContext(AppContext);
- 
-  const {params} = useParams();
-  console.log("%c 🙎‍♀️: ContentMessages -> params ", "font-size:16px;background-color:#ba2f7e;color:white;", params)
-  // const id = params.id;
 
-  // const data = messages.find(msg => msg.id === id)
+  const { state } = context;
+  const { id, type } = state.activeMessage;
+
+  const generateDirectMessage = () => {
+    const msgs = directMessages.find(msg => msg.user_id === id)
+    if(msgs){
+      return msgs.details?.map((msg: any) => {
+        return (
+          <div key={msg.user_id}>
+              <p>{msg.user === 'you' ? 'You' : msgs.user_name}</p>
+              <p>{msg.message}</p>
+          </div>
+        )
+      })
+    }
+  }
+
+  const generateTeam = () => {
+    return <div>this is team messages</div>
+  }
+
   return (
     <div>
       <StyledMessages className="messages">
         <StyledMessage className="message">
+          <>
+            {type === 'direct' && generateDirectMessage()}
+            {type === 'team' && generateTeam()}
+            {type === '' && <div>No message found!</div>}
+          </>
+          
           {/* {messages.map((message) => ())} */}
-            <StyledMsgContent className="msg_content">
+            {/* <StyledMsgContent className="msg_content">
               <StyledMessageIconButton
                 src="../imgs/hacker.png"
                 alt="Hacker Icon"
               />
               <StyledText className="text">
-                <StyledP>{}</StyledP>
+                <StyledP>test</StyledP>
                 <p>{context.state.message}</p>
               </StyledText>
               <div className="message-time">
                 <StyledTime className="time">{}</StyledTime>
               </div>
-            </StyledMsgContent>
+            </StyledMsgContent> */}
         </StyledMessage>
       </StyledMessages>
     </div>

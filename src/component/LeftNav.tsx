@@ -1,22 +1,52 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { AppContext } from "../Context/context";
 
 function LeftNav() {
+
+  const context = useContext(AppContext)
+
+  const { setState, state } = context
+
   const users = [
-    { name: "Jean Pretzy Rim" },
-    { name: "Junne Toral" },
-    { name: "Leslie Marie Reyes" },
-    { name: "Philip John Batulan" },
-    { name: "Juphet Vitualla" },
+    { name: "Jean Pretzy Rim", id: 1 },
+    { name: "Junne Toral", id: 2},
+    { name: "Leslie Marie Reyes", id: 3 },
+    { name: "Philip John Batulan", id: 4 },
+    { name: "Juphet Vitualla", id: 5 },
   ];
 
   const teams = [
-    { team: "TEAMBANGAN-weighs" },
-    { team: ".{dna:micro}." },
-    { team: "WFH" },
-    { team: "All Employees" },
-    { team: "Team Vitamins" },
+    { team: "TEAMBANGAN-weighs", team_id: 1, },
+    { team: ".{dna:micro}.", team_id: 2, },
+    { team: "WFH", team_id: 3, },
+    { team: "All Employees", team_id: 4, },
+    { team: "Team Vitamins", team_id: 5, },
   ];
+
+  const handlePressTeams = (id: number) => {
+    setState(
+      {
+        ...state, 
+        activeMessage:{
+          id: id, 
+          type: 'team'
+        }
+      }
+    )
+  }
+  const handlePressUser = (id: number) => {
+    setState(
+      {
+        ...state, 
+        activeMessage:{
+          id: id, 
+          type: 'direct'
+        }
+      }
+    )
+  }
+
   return (
     <div>
       <StyledRow className="row">
@@ -97,7 +127,13 @@ function LeftNav() {
               <ul>
                 {users.map((user) => (
                   <StyledUserli>
-                    <StyledUserA href="/">{user.name}</StyledUserA>
+                    <StyledUserA 
+                      onClick={() => {
+                        handlePressUser(user.id)
+                      }} 
+                      href="#">
+                        {user.name}
+                    </StyledUserA>
                   </StyledUserli>
                 ))}
               </ul>
@@ -111,7 +147,11 @@ function LeftNav() {
               <ul>
                 {teams.map((team) => (
                   <StyledUserli>
-                    <StyledUserA href="/">{team.team}</StyledUserA>
+                    <StyledUserA 
+                      onClick={() => {
+                        handlePressTeams(team.team_id)
+                      }} 
+                      href="#">{team.team}</StyledUserA>
                   </StyledUserli>
                 ))}
               </ul>
