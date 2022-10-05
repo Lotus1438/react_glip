@@ -1,51 +1,61 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { AppContext } from "../Context/context";
+import chat from '../imgs/chat.png';
+import video_camera from '../imgs/video-camera.png';
+import user_circle from '../imgs/user-circle.png';
+import more from '../imgs/more.png';
+import puzzle from '../imgs/puzzle.png';
+import settings from '../imgs/settings.png';
+import question_mark from '../imgs/question-mark.png';
+import email from '../imgs/email.png';
+import bookmark from '../imgs/bookmark.png';
+import off_button from '../imgs/off-button.png';
+import user from '../imgs/user.png';
+import menu from '../imgs/menu.png';
+import team from '../imgs/teams.png';
+import add from '../imgs/add.png';
+
 
 function LeftNav() {
+  const context = useContext(AppContext);
 
-  const context = useContext(AppContext)
-
-  const { setState, state } = context
+  const { setState, state } = context;
 
   const users = [
     { name: "Jean Pretzy Rim", id: 1 },
-    { name: "Junne Toral", id: 2},
+    { name: "Junne Toral", id: 2 },
     { name: "Leslie Marie Reyes", id: 3 },
     { name: "Philip John Batulan", id: 4 },
     { name: "Juphet Vitualla", id: 5 },
   ];
 
   const teams = [
-    { team: "TEAMBANGAN-weighs", team_id: 1, },
-    { team: ".{dna:micro}.", team_id: 2, },
-    { team: "WFH", team_id: 3, },
-    { team: "All Employees", team_id: 4, },
-    { team: "Team Vitamins", team_id: 5, },
+    { team: "TEAMBANGAN-weighs", team_id: 1 },
+    { team: ".{dna:micro}.", team_id: 2 },
+    { team: "WFH", team_id: 3 },
+    { team: "All Employees", team_id: 4 },
+    { team: "Team Vitamins", team_id: 5 },
   ];
 
   const handlePressTeams = (id: number) => {
-    setState(
-      {
-        ...state, 
-        activeMessage:{
-          id: id, 
-          type: 'team'
-        }
-      }
-    )
-  }
+    setState({
+      ...state,
+      activeMessage: {
+        id: id,
+        type: "team",
+      },
+    });
+  };
   const handlePressUser = (id: number) => {
-    setState(
-      {
-        ...state, 
-        activeMessage:{
-          id: id, 
-          type: 'direct'
-        }
-      }
-    )
-  }
+    setState({
+      ...state,
+      activeMessage: {
+        id: id,
+        type: "direct",
+      },
+    });
+  };
 
   return (
     <div>
@@ -54,44 +64,44 @@ function LeftNav() {
           <StyledCol1 className="col1">
             <StyledIconsUpper className="icons-upper">
               <StyledButton>
-                <StyledIconButton src="../imgs/chat.png" alt="Chat box Icon" />
+                <StyledIconButton src={chat} alt="Chat box Icon" />
                 <p>Message</p>
               </StyledButton>
               <StyledButton>
                 <StyledIconButton
-                  src="../imgs/video-camera.png"
+                  src={video_camera}
                   alt="Video Icon"
                 />
                 <p>Video</p>
               </StyledButton>
               <StyledButton>
                 <StyledIconButton
-                  src="../imgs/user-circle.png"
+                  src={user_circle}
                   alt="User in circle Icon"
                 />
                 <p>Contacts</p>
               </StyledButton>
               <StyledButton>
-                <StyledIconButton src="../imgs/more.png" alt="More Icon" />
+                <StyledIconButton src={more} alt="More Icon" />
                 <p>More</p>
               </StyledButton>
             </StyledIconsUpper>
 
             <StyledIconsLower>
               <StyledButton>
-                <StyledIconButton src="../imgs/puzzle.png" alt="Apps Icon" />
+                <StyledIconButton src={puzzle} alt="Apps Icon" />
                 <p>Apps</p>
               </StyledButton>
               <StyledButton>
                 <StyledIconButton
-                  src="../imgs/settings.png"
+                  src={settings}
                   alt="Settings Icon"
                 />
                 <p>Settings</p>
               </StyledButton>
               <StyledButton>
                 <StyledIconButton
-                  src="../imgs/question-mark.png"
+                  src={question_mark}
                   alt="Question mark Icon"
                 />
                 <p>Resource Center</p>
@@ -102,65 +112,69 @@ function LeftNav() {
 
         <StyledCol2 className="col2">
           <StyledCol2Button>
-            <StyledIconButton2 src="../imgs/email.png" alt="Email @ Icon" />
+            <StyledIconButton2 src={email} alt="Email @ Icon" />
             Mentions
           </StyledCol2Button>
           <StyledCol2Button>
-            <StyledIconButton2 src="../imgs/bookmark.png" alt="Bookmark Icon" />
+            <StyledIconButton2 src={bookmark} alt="Bookmark Icon" />
             Bookmarks
           </StyledCol2Button>
 
           <StyledShowUnread>
             <StyledP>Show Unread</StyledP>
             <StyledShowUnreadIcon
-              src="../imgs/off-button.png"
+              src={off_button}
               alt="Off button Icon"
             />
           </StyledShowUnread>
 
           <StyledUsers className="users">
             <StyledDirectMessageButton>
-              <StyledIconButton2 src="../imgs/user.png" alt="User Icon" />
+              <StyledIconButton2 src={user} alt="User Icon" />
               DIRECT MESSAGES
             </StyledDirectMessageButton>
             <StyledUser className="user">
               <ul>
                 {users.map((user) => (
                   <StyledUserli>
-                    <StyledUserA 
+                    <StyledUserA
                       onClick={() => {
-                        handlePressUser(user.id)
-                      }} 
-                      href="#">
-                        {user.name}
+                        handlePressUser(user.id);
+                      }}
+                      href="#"
+                    >
+                      {user.name}
                     </StyledUserA>
                   </StyledUserli>
                 ))}
               </ul>
-              <StyledIconButtonMenu src="../imgs/menu.png" alt="Menu Icon" />
+              <StyledIconButtonMenu src={menu} alt="Menu Icon" />
             </StyledUser>
             <StyledDirectMessageButton>
-              <StyledIconButton2 src="../imgs/teams.png" alt="Teams Icon" />
+              <StyledIconButton2 src={team} alt="Teams Icon" />
               TEAMS
             </StyledDirectMessageButton>
             <StyledUser className="user">
               <ul>
                 {teams.map((team) => (
                   <StyledUserli>
-                    <StyledUserA 
+                    <StyledUserA
                       onClick={() => {
-                        handlePressTeams(team.team_id)
-                      }} 
-                      href="#">{team.team}</StyledUserA>
+                        handlePressTeams(team.team_id);
+                      }}
+                      href="#"
+                    >
+                      {team.team}
+                    </StyledUserA>
                   </StyledUserli>
                 ))}
               </ul>
-              <StyledIconButtonMenu src="../imgs/menu.png" alt="Menu Icon" />
+              <StyledIconButtonMenu src={menu} alt="Menu Icon" />
             </StyledUser>
           </StyledUsers>
 
           <StyledNewFolder>
-            <StyledNewFolderIcon src="../imgs/add.png" alt="Add folder Icon" />
+            <StyledNewFolderIcon src={add} alt="Add folder Icon" />
             <StyledP>New Folder</StyledP>
           </StyledNewFolder>
         </StyledCol2>

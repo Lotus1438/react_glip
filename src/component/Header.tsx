@@ -1,20 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+import girl from '../imgs/girl.png';
+import lessThan from '../imgs/less-than-symbol.png';
+import greaterThan from '../imgs/greater-than-symbol.png';
+
 
 function Header() {
   return (
     <StyledHeader>
-      <StyledImgProfile src="../imgs/girl.png" alt="Girl Avatar Profile" />
+      <StyledImgProfile src={girl} alt="Girl Avatar Profile" />
       <StyledP>DNA Micro</StyledP>
       <StyledButton>
         <StyledImgIcon
-          src="../imgs/less-than-symbol.png"
+          src={lessThan}
           alt="Less than symbol"
         />
       </StyledButton>
       <StyledButton>
         <StyledImgIcon
-          src="../imgs/greater-than-symbol.png"
+          src={greaterThan}
           alt="Greater than symbol"
         />
       </StyledButton>

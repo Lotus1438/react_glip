@@ -1,23 +1,31 @@
 import React from "react";
 import styled from "styled-components";
+import next from '../imgs/next.png';
+import girl from '../imgs/girl.png';
+import hacker from '../imgs/hacker.png';
+import add_user from '../imgs/add-user.png';
+import more from '../imgs/more.png';
+import sticky_note from '../imgs/sticky-note.png';
+
+
 
 function RightNav() {
   return (
     <StyledContent className="Content">
       <StyledHeader>
         <p>Members(3)</p>
-        <StyledImgArrowIcon src="../imgs/next.png" alt="Next symbol Icon" />
+        <StyledImgArrowIcon src={next} alt="Next symbol Icon" />
       </StyledHeader>
 
       <StyledAvatarsProfile className="avatars_profile">
         <StyledImgButton>
-          <StyledImgIcon src="../imgs/girl.png" alt="Girl Avatar Icon" />
+          <StyledImgIcon src={girl} alt="Girl Avatar Icon" />
         </StyledImgButton>
         <StyledImgButton>
-          <StyledImgIcon src="../imgs/hacker.png" alt="Hacker Avatar Icon" />
+          <StyledImgIcon src={hacker} alt="Hacker Avatar Icon" />
         </StyledImgButton>
         <StyledImgButton>
-          <StyledImgIcon src="../imgs/add-user.png" alt="Add User Icon" />
+          <StyledImgIcon src={add_user} alt="Add User Icon" />
         </StyledImgButton>
       </StyledAvatarsProfile>
 
@@ -36,14 +44,14 @@ function RightNav() {
           </StyledLi>
         </StyledUl>
         <StyledButton>
-          <StyledIconButton src="../imgs/more.png" alt="More Icon" />
+          <StyledIconButton src={more} alt="More Icon" />
         </StyledButton>
       </StyledMenu>
 
       <hr />
 
       <StyledPinContent>
-        <StyledSticky src="../imgs/sticky-note.png" alt="Sticky note Icon" />
+        <StyledSticky src={sticky_note} alt="Sticky note Icon" />
         <h5>No pins Yet</h5>
         <StyledPinP>
           Pin informaton and it will appear here so that you can reference it

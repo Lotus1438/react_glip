@@ -1,25 +1,24 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState } from "react";
 
 export const AppContext = createContext<any>(undefined);
 
 function Context(props: any) {
-
-   const contextValue = {
-    inputValue: '',
+  const contextValue = {
+    inputValue: "",
     message: props.message,
     activeMessage: {
       id: 0,
-      type: ''
-    }
-   }
+      type: "",
+    },
+  };
 
-   const [state, setState] = useState(contextValue)
+  const [state, setState] = useState(contextValue);
 
   return (
-    <AppContext.Provider value={{state: state, setState: setState}}>
-        {props.children}
+    <AppContext.Provider value={{ state: state, setState: setState }}>
+      {props.children}
     </AppContext.Provider>
-  )
+  );
 }
 
-export default Context
+export default Context;
