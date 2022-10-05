@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { AppContext } from "../Context/context";
 import { MdBookmark, MdForum, MdMenuBook, MdOutlineMoreHoriz, MdOutlineSettings, MdVideoCameraBack } from "react-icons/md";
 import { FaPuzzlePiece } from "react-icons/fa";
-import { AiOutlineQuestionCircle } from "react-icons/ai";
+import { AiOutlineQuestionCircle, AiFillFolderAdd } from "react-icons/ai";
 import { GoMention } from "react-icons/go";
 
 
@@ -153,6 +153,7 @@ function LeftNav() {
 
           <StyledNewFolder>
             {/* <StyledNewFolderIcon src={add} alt="Add folder Icon" /> */}
+              <AiFillFolderAdd size={25}/>
             <StyledP>New Folder</StyledP>
           </StyledNewFolder>
         </StyledCol2>
@@ -165,6 +166,7 @@ const StyledRow = styled.div`
   margin-left: 0;
   /* width: 17%; */
   display: flex;
+  position: relative;
 `;
 const StyledCol1 = styled.div`
   width: 5rem;
@@ -287,6 +289,11 @@ const StyledNewFolder = styled.div`
   position: absolute;
   bottom: 0px;
   left: 0;
+  padding: 5px;
+  border: 1px solid #e7e7e7;
+  border-left: none;
+  border-right: none;
+  width: 100%;
 `;
 const StyledP = styled.p`
   justify-content: center;

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import add_text from '../imgs/add-text.png';
 import clip from '../imgs/clip.png';
@@ -10,14 +10,21 @@ import calendar from '../imgs/calendar.png';
 import web_programming from '../imgs/web-programming.png';
 import send from '../imgs/send.png';
 
-
+import { GiNotebook } from 'react-icons/gi'
+import { GrAttachment } from 'react-icons/gr'
+import { MdInsertEmoticon, MdOutlineStickyNote2 } from 'react-icons/md'
+import { AiOutlineFileGif, AiOutlineCheckCircle, AiOutlineCalendar, AiFillCode } from 'react-icons/ai'
+import { RiSendPlaneFill } from 'react-icons/ri'
 
 
 interface PropTypes {
   inputValue?: string;
   message?: string;
+  refs?: React.MutableRefObject<any>
 }
 function ContentFooter(props: PropTypes) {
+
+  const { refs } = props;
   const initState = {
     inputValue: "",
     message: props.message,
@@ -30,44 +37,22 @@ function ContentFooter(props: PropTypes) {
       message: message.inputValue,
     });
   };
+
+  
+
   return (
     <StyledFooter className="content-footer">
       <StyledFooterIcons className="icons">
-        <StyledButton>
-          <StyledFooterIconButton
-            src={add_text}
-            alt="Addtext Icon"
-          />
-        </StyledButton>
-        <StyledButton>
-          <StyledFooterIconButton src={clip} alt="Clip Icon" />
-        </StyledButton>
-        <StyledButton>
-          <StyledFooterIconButton src={smile} alt="Smile Icon" />
-        </StyledButton>
-        <StyledButton>
-          <StyledFooterIconButton src={gif} alt="Gif Icon" />
-        </StyledButton>
-        <StyledButton>
-          <StyledFooterIconButton
-            src={check_mark}
-            alt="Checkmark Icon"
-          />
-        </StyledButton>
-        <StyledButton>
-          <StyledFooterIconButton
-            src={calendar}
-            alt="Calendar Icon"
-          />
-        </StyledButton>
-        <StyledButton>
-          <StyledFooterIconButton
-            src={web_programming}
-            alt="Web programming Icon"
-          />
-        </StyledButton>
+        <GiNotebook size={20} />
+        <GrAttachment size={20}/>
+        <MdInsertEmoticon size={20}/>
+        <AiOutlineFileGif size={20}/>
+        <AiOutlineCheckCircle  size={20}/>
+        <AiOutlineCalendar size={20}/>
+        <MdOutlineStickyNote2 size={20}/>
+        <AiFillCode size={20}/>
       </StyledFooterIcons>
-      <StlyedTextarea>
+      <StlyedTextarea style={{width: refs?.current?.clientWidth ? `${refs?.current?.clientWidth}px` : '100%'}}>
         {message.message}
         <StyledTextArea
           name=""
@@ -80,9 +65,9 @@ function ContentFooter(props: PropTypes) {
             });
           }}
         ></StyledTextArea>
-        <StyledButton onClick={submitMessage}>
-          <StyledIconButtonRight src={send} alt="Send Icon" />
-        </StyledButton>
+        <a href="#">
+          <RiSendPlaneFill size={25}/>
+        </a>
       </StlyedTextarea>
     </StyledFooter>
   );
@@ -102,13 +87,15 @@ const StyledIconButtonRight = styled.img`
   cursor: pointer;
 `;
 const StyledTextArea = styled.textarea`
-  width: 91%;
   height: 2.5rem;
   margin-top: 20px;
   font-size: 20px;
   line-height: 47px;
-  padding-left: 15px;
   overflow: hidden;
+  width: 100%;
+  resize: none;
+  font-size: 16px;
+  font-family:inherit;
 `;
 const StyledFooterIconButton = styled.img`
   width: 19px;
@@ -118,11 +105,21 @@ const StyledFooterIconButton = styled.img`
 `;
 const StyledFooterIcons = styled.div`
   display: flex;
-  padding-left: 72px;
-  padding-top: 15px;
+  width: 100%;
+  padding: 15px 15px 0;
+  svg{
+    margin-right: 1rem;
+  }
 `;
 const StlyedTextarea = styled.div`
   display: flex;
-  width: 340%;
+  width: 100%;
+  position: relative;
+  a{
+    position: absolute;
+    color: #333;
+    right: 10px;
+    bottom: 0
+  }
 `;
 export default ContentFooter;

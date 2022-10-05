@@ -5,7 +5,8 @@ import padlock from '../imgs/padlock.png';
 import account from '../imgs/account.png';
 import videocamera from '../imgs/video-camera.png';
 import menu from '../imgs/menu.png';
-import {AiFillLock, AiOutlineStar, AiOutlineUser} from 'react-icons/ai'
+import {AiFillLock, AiOutlineStar, AiOutlineUser, AiOutlineVideoCamera} from 'react-icons/ai'
+import { HiDotsVertical } from 'react-icons/hi'
 
 function ContentHeader() {
   return (
@@ -21,15 +22,8 @@ function ContentHeader() {
         </StyledIconsLeft>
 
         <StyledIconsRight className="icons-right">
-          <StyledButton>
-            <StyledIconButtonRight
-              src={videocamera}
-              alt="Video Camera Icon"
-            />
-          </StyledButton>
-          <StyledButton>
-            <StyledIconButtonRight src={menu} alt="Menu Icon" />
-          </StyledButton>
+          <AiOutlineVideoCamera size={25}/>
+          <HiDotsVertical  size={25}/>
         </StyledIconsRight>
       </StyledHeader>
     </StyledContentHeader>
