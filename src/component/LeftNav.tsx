@@ -1,11 +1,20 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { AppContext } from "../Context/context";
-import { MdBookmark, MdForum, MdMenuBook, MdOutlineMoreHoriz, MdOutlineSettings, MdVideoCameraBack } from "react-icons/md";
+import {
+  MdBookmark,
+  MdForum,
+  MdMenuBook,
+  MdOutlineMoreHoriz,
+  MdOutlineSettings,
+  MdVideoCameraBack,
+  MdCreateNewFolder,
+  MdToggleOff,
+  MdOutlineToggleOff,
+} from "react-icons/md";
 import { FaPuzzlePiece } from "react-icons/fa";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { GoMention } from "react-icons/go";
-
 
 function LeftNav() {
   const context = useContext(AppContext);
@@ -54,19 +63,19 @@ function LeftNav() {
           <StyledCol1 className="col1">
             <StyledIconsUpper className="icons-upper">
               <StyledButton>
-                <MdForum  size={25}/>
+                <MdForum size={25} />
                 <p>Message</p>
               </StyledButton>
               <StyledButton>
-                <MdVideoCameraBack  size={25}/>
+                <MdVideoCameraBack size={25} />
                 <p>Video</p>
               </StyledButton>
               <StyledButton>
-                <MdMenuBook  size={25}/>
+                <MdMenuBook size={25} />
                 <p>Contacts</p>
               </StyledButton>
               <StyledButton>
-                <MdOutlineMoreHoriz size={25}/>
+                <MdOutlineMoreHoriz size={25} />
                 <p>More</p>
               </StyledButton>
             </StyledIconsUpper>
@@ -81,7 +90,7 @@ function LeftNav() {
                 <p>Settings</p>
               </StyledButton>
               <StyledButton>
-                <AiOutlineQuestionCircle size={25}/>
+                <AiOutlineQuestionCircle size={25} />
                 <p>Resource Center</p>
               </StyledButton>
             </StyledIconsLower>
@@ -104,6 +113,7 @@ function LeftNav() {
               src={off_button}
               alt="Off button Icon"
             /> */}
+                <MdOutlineToggleOff size={25} />
           </StyledShowUnread>
 
           <StyledUsers className="users">
@@ -152,7 +162,7 @@ function LeftNav() {
           </StyledUsers>
 
           <StyledNewFolder>
-            {/* <StyledNewFolderIcon src={add} alt="Add folder Icon" /> */}
+            <MdCreateNewFolder size={25} />
             <StyledP>New Folder</StyledP>
           </StyledNewFolder>
         </StyledCol2>
@@ -185,15 +195,15 @@ const StyledCol2Button = styled.button`
   display: flex;
   border-color: rgb(0, 0, 0, 0.2);
   width: 100%;
-  padding: .3rem;
+  padding: 0.3rem;
   align-items: center;
   text-align: justify;
   font-size: 16px;
   margin-bottom: 5px;
   border-radius: 5px;
   cursor: pointer;
-  svg{
-    margin-right: .5rem;
+  svg {
+    margin-right: 0.5rem;
   }
   &:hover {
     background-color: aliceblue;
@@ -267,7 +277,7 @@ const StyledDirectMessageButton = styled.button`
   font-size: 14px;
   border: none;
   cursor: pointer;
-  font-weight:bold;
+  font-weight: bold;
 `;
 const StyledIconCont = styled.div`
   height: 91vh;

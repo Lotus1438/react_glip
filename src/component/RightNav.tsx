@@ -1,20 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import next from '../imgs/next.png';
-import girl from '../imgs/girl.png';
-import hacker from '../imgs/hacker.png';
-import add_user from '../imgs/add-user.png';
-import more from '../imgs/more.png';
-import sticky_note from '../imgs/sticky-note.png';
-
-
+import next from "../imgs/next.png";
+import girl from "../imgs/girl.png";
+import hacker from "../imgs/hacker.png";
+import add_user from "../imgs/add-user.png";
+import more from "../imgs/more.png";
+import sticky_note from "../imgs/sticky-note.png";
+import { MdOutlineMoreHoriz, MdKeyboardTab } from "react-icons/md";
 
 function RightNav() {
   return (
     <StyledContent className="Content">
       <StyledHeader>
         <p>Members(3)</p>
-        <StyledImgArrowIcon src={next} alt="Next symbol Icon" />
+        <MdKeyboardTab size={25} />
       </StyledHeader>
 
       <StyledAvatarsProfile className="avatars_profile">
@@ -44,7 +43,7 @@ function RightNav() {
           </StyledLi>
         </StyledUl>
         <StyledButton>
-          <StyledIconButton src={more} alt="More Icon" />
+          <MdOutlineMoreHoriz size={25} />
         </StyledButton>
       </StyledMenu>
 
@@ -52,7 +51,7 @@ function RightNav() {
 
       <StyledPinContent>
         <StyledSticky src={sticky_note} alt="Sticky note Icon" />
-        <h5>No pins Yet</h5>
+        <h4>No pins Yet</h4>
         <StyledPinP>
           Pin informaton and it will appear here so that you can reference it
           later.
@@ -107,6 +106,7 @@ const StyledMenu = styled.div`
 `;
 const StyledUl = styled.ul`
   display: flex;
+  padding-left: 18px;
 `;
 const StyledLi = styled.li`
   float: left;
@@ -124,6 +124,7 @@ const StyledA = styled.a`
 const StyledButton = styled.button`
   border: none;
   margin-right: 12px;
+  background-color: transparent;
   cursor: pointer;
 `;
 const StyledIconButton = styled.img`
@@ -139,5 +140,6 @@ const StyledPinContent = styled.div`
 `;
 const StyledPinP = styled.p`
   font-size: 16px;
+  padding: 24px;
 `;
 export default RightNav;

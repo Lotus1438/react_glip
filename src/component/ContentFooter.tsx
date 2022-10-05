@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import styled from "styled-components";
 import add_text from '../imgs/add-text.png';
@@ -9,6 +8,10 @@ import check_mark from '../imgs/check-mark.png';
 import calendar from '../imgs/calendar.png';
 import web_programming from '../imgs/web-programming.png';
 import send from '../imgs/send.png';
+import {  MdFormatShapes, MdAttachFile, MdCheckCircleOutline, MdGif, MdOutlineEmojiEmotions, MdOutlineCalendarToday, MdOutlineCodeOff  } from "react-icons/md";
+import ContentMessages from "./ContentMessages";
+import { messages } from "../messages";
+
 
 
 
@@ -27,44 +30,32 @@ function ContentFooter(props: PropTypes) {
   const submitMessage = () => {
     setMessage({
       ...message,
-      message: message.inputValue,
+      message: message?.inputValue,
     });
   };
   return (
     <StyledFooter className="content-footer">
       <StyledFooterIcons className="icons">
         <StyledButton>
-          <StyledFooterIconButton
-            src={add_text}
-            alt="Addtext Icon"
-          />
+        <MdFormatShapes size={20} />
         </StyledButton>
         <StyledButton>
-          <StyledFooterIconButton src={clip} alt="Clip Icon" />
+        <MdAttachFile size={20} />
         </StyledButton>
         <StyledButton>
-          <StyledFooterIconButton src={smile} alt="Smile Icon" />
+          <MdOutlineEmojiEmotions size={20} />
         </StyledButton>
         <StyledButton>
-          <StyledFooterIconButton src={gif} alt="Gif Icon" />
+          <MdGif size={20} />
         </StyledButton>
         <StyledButton>
-          <StyledFooterIconButton
-            src={check_mark}
-            alt="Checkmark Icon"
-          />
+        <MdCheckCircleOutline size={20} />
         </StyledButton>
         <StyledButton>
-          <StyledFooterIconButton
-            src={calendar}
-            alt="Calendar Icon"
-          />
+        <MdOutlineCalendarToday size={20} />
         </StyledButton>
         <StyledButton>
-          <StyledFooterIconButton
-            src={web_programming}
-            alt="Web programming Icon"
-          />
+        <MdOutlineCodeOff size={20} />
         </StyledButton>
       </StyledFooterIcons>
       <StlyedTextarea>
@@ -79,7 +70,8 @@ function ContentFooter(props: PropTypes) {
               inputValue: e.target.value,
             });
           }}
-        ></StyledTextArea>
+        >
+        </StyledTextArea>
         <StyledButton onClick={submitMessage}>
           <StyledIconButtonRight src={send} alt="Send Icon" />
         </StyledButton>
@@ -94,6 +86,10 @@ const StyledFooter = styled.div`
 const StyledButton = styled.button`
   border: none;
   margin-right: 12px;
+  background-color: transparent;
+  position: relative;
+  left: -31px;
+    top: 14px;
   cursor: pointer;
 `;
 const StyledIconButtonRight = styled.img`
@@ -102,9 +98,10 @@ const StyledIconButtonRight = styled.img`
   cursor: pointer;
 `;
 const StyledTextArea = styled.textarea`
-  width: 91%;
+  width: 85%;
   height: 2.5rem;
   margin-top: 20px;
+  margin-left: 1rem;
   font-size: 20px;
   line-height: 47px;
   padding-left: 15px;

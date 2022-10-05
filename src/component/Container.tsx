@@ -39,7 +39,7 @@ const StyledMainContent = styled.div`
   // height: 100vh;
 `;
 const StyledSidebarRight = styled.div`
-  width: 15%;
+  width: 18%;
   // height: 100vh;
   border-left: 1px solid rgba(0, 0, 0, 0.2);
 `;
