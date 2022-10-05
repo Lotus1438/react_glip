@@ -35,7 +35,7 @@ const StyledContent = styled.div`
 `;
 const StyledCont = styled.div`
   height: 75%;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 const StyledFooter = styled.footer`

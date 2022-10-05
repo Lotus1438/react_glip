@@ -35,7 +35,7 @@ const StyledSidebarLeft = styled.div`
   // height: 100vh;
 `;
 const StyledMainContent = styled.div`
-  width: 90%;
+  width: 67%;
   // height: 100vh;
 `;
 const StyledSidebarRight = styled.div`

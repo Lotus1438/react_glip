@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { directMessages, messages } from "../messages";
 import { AppContext } from "../Context/context";
 
-
 function ContentMessages() {
   const context = useContext(AppContext);
 

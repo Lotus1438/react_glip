@@ -100,15 +100,15 @@ function LeftNav() {
 
           <StyledShowUnread>
             <StyledP>Show Unread</StyledP>
-            <StyledShowUnreadIcon
+            {/* <StyledShowUnreadIcon
               src={off_button}
               alt="Off button Icon"
-            />
+            /> */}
           </StyledShowUnread>
 
           <StyledUsers className="users">
             <StyledDirectMessageButton>
-              <StyledIconButton2 src={user} alt="User Icon" />
+              {/* <StyledIconButton2 src={user} alt="User Icon" /> */}
               DIRECT MESSAGES
             </StyledDirectMessageButton>
             <StyledUser className="user">
@@ -126,10 +126,10 @@ function LeftNav() {
                   </StyledUserli>
                 ))}
               </ul>
-              <StyledIconButtonMenu src={menu} alt="Menu Icon" />
+              {/* <StyledIconButtonMenu src={menu} alt="Menu Icon" /> */}
             </StyledUser>
             <StyledDirectMessageButton>
-              <StyledIconButton2 src={team} alt="Teams Icon" />
+              {/* <StyledIconButton2 src={team} alt="Teams Icon" /> */}
               TEAMS
             </StyledDirectMessageButton>
             <StyledUser className="user">
@@ -147,12 +147,12 @@ function LeftNav() {
                   </StyledUserli>
                 ))}
               </ul>
-              <StyledIconButtonMenu src={menu} alt="Menu Icon" />
+              {/* <StyledIconButtonMenu src={menu} alt="Menu Icon" /> */}
             </StyledUser>
           </StyledUsers>
 
           <StyledNewFolder>
-            <StyledNewFolderIcon src={add} alt="Add folder Icon" />
+            {/* <StyledNewFolderIcon src={add} alt="Add folder Icon" /> */}
             <StyledP>New Folder</StyledP>
           </StyledNewFolder>
         </StyledCol2>
@@ -178,18 +178,19 @@ const StyledCol2 = styled.div`
   background-color: white;
   position: relative;
   padding: 0.5rem;
+  border-right: 1px solid #eae8e8;
 `;
 const StyledCol2Button = styled.button`
   background-color: transparent;
   display: flex;
-  margin-top: 7px;
   border-color: rgb(0, 0, 0, 0.2);
   width: 100%;
   padding: .3rem;
   align-items: center;
-  margin-left: 13px;
   text-align: justify;
   font-size: 16px;
+  margin-bottom: 5px;
+  border-radius: 5px;
   cursor: pointer;
   svg{
     margin-right: .5rem;
@@ -203,7 +204,6 @@ const StyledUsers = styled.div`
   position: absolute;
   font-size: 20px;
   padding: 6px;
-  overflow-y: scroll;
 `;
 const StyledUser = styled.div`
   display: block;
@@ -249,6 +249,7 @@ const StyledIconButton2 = styled.img`
 const StyledUserli = styled.li`
   font-size: 16px;
   padding: 6px;
+  list-style: none;
   &:hover {
     background-color: aliceblue;
   }
@@ -259,14 +260,14 @@ const StyledUserA = styled.a`
 `;
 const StyledDirectMessageButton = styled.button`
   background-color: transparent;
-  margin-top: 7px;
+  margin-top: 10px;
   width: 12rem;
-  margin-left: -16px;
   text-align: justify;
   width: 12.1rem;
   font-size: 14px;
   border: none;
   cursor: pointer;
+  font-weight:bold;
 `;
 const StyledIconCont = styled.div`
   height: 91vh;
@@ -276,15 +277,13 @@ const StyledIconCont = styled.div`
 const StyledShowUnread = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-left: 15px;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 15px;
 `;
 const StyledNewFolder = styled.div`
   align-items: center;
   display: flex;
   float: left;
-  margin-left: 15px;
   position: absolute;
   bottom: 0px;
   left: 0;

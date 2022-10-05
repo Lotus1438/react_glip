@@ -5,6 +5,7 @@ import padlock from '../imgs/padlock.png';
 import account from '../imgs/account.png';
 import videocamera from '../imgs/video-camera.png';
 import menu from '../imgs/menu.png';
+import {AiFillLock, AiOutlineStar, AiOutlineUser} from 'react-icons/ai'
 
 function ContentHeader() {
   return (
@@ -12,15 +13,11 @@ function ContentHeader() {
       <StyledHeader className="header">
         <StyledIconsLeft className="icons-left">
           <StyledP>TEAMBANGAN-weighs</StyledP>
-          <StyledButton>
-            <StyledIconButton src={startIcon} alt="Star Icon" />
-          </StyledButton>
-          <StyledButton>
-            <StyledIconButton src={padlock} alt="Padlock Icon" />
-          </StyledButton>
-          <StyledButton>
-            <StyledIconButton src={account} alt="Acount Icon" />
-          </StyledButton>
+           <div className="icon_cont">
+            <AiOutlineStar size={25}/>
+            <AiFillLock size={25}/>
+            <AiOutlineUser size={25}/>
+           </div>
         </StyledIconsLeft>
 
         <StyledIconsRight className="icons-right">
@@ -39,17 +36,22 @@ function ContentHeader() {
   );
 }
 
-const StyledContentHeader = styled.header`
-  display: flex;
+const StyledContentHeader = styled.div`
   font-size: 19px;
+  width: 100%;
   // padding: 1rem;
 `;
 const StyledHeader = styled.div`
-  display: contents;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex:1;
+  width: 100%;
 `;
 const StyledP = styled.p`
   // padding-right: 40px;
   // padding-left: 53px;
+  white-space: pre-line;
 `;
 const StyledButton = styled.button`
   border: none;
@@ -59,10 +61,17 @@ const StyledButton = styled.button`
 const StyledIconsLeft = styled.div`
   display: flex;
   align-items: center;
+
+  .icon_cont{
+    margin-left: 1rem;
+    display: flex;
+    svg{
+      margin-right: 5px;
+    }
+  }
 `;
 const StyledIconsRight = styled.div`
   // padding-left: 78rem;
-  margin-left: 62rem;
 `;
 const StyledIconButton = styled.img`
   width: 18px;
