@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { AppContext } from "../Context/context";
+import { MdBookmark, MdForum, MdMenuBook, MdOutlineMoreHoriz, MdOutlineSettings, MdVideoCameraBack } from "react-icons/md";
+import { FaPuzzlePiece } from "react-icons/fa";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
+import { GoMention } from "react-icons/go";
 
 function LeftNav() {
 
@@ -54,46 +58,34 @@ function LeftNav() {
           <StyledCol1 className="col1">
             <StyledIconsUpper className="icons-upper">
               <StyledButton>
-                <StyledIconButton src="../imgs/chat.png" alt="Chat box Icon" />
+                <MdForum  size={25}/>
                 <p>Message</p>
               </StyledButton>
               <StyledButton>
-                <StyledIconButton
-                  src="../imgs/video-camera.png"
-                  alt="Video Icon"
-                />
+                <MdVideoCameraBack  size={25}/>
                 <p>Video</p>
               </StyledButton>
               <StyledButton>
-                <StyledIconButton
-                  src="../imgs/user-circle.png"
-                  alt="User in circle Icon"
-                />
+                <MdMenuBook  size={25}/>
                 <p>Contacts</p>
               </StyledButton>
               <StyledButton>
-                <StyledIconButton src="../imgs/more.png" alt="More Icon" />
+                <MdOutlineMoreHoriz size={25}/>
                 <p>More</p>
               </StyledButton>
             </StyledIconsUpper>
 
             <StyledIconsLower>
               <StyledButton>
-                <StyledIconButton src="../imgs/puzzle.png" alt="Apps Icon" />
+                <FaPuzzlePiece size={25} />
                 <p>Apps</p>
               </StyledButton>
               <StyledButton>
-                <StyledIconButton
-                  src="../imgs/settings.png"
-                  alt="Settings Icon"
-                />
+                <MdOutlineSettings size={25} />
                 <p>Settings</p>
               </StyledButton>
               <StyledButton>
-                <StyledIconButton
-                  src="../imgs/question-mark.png"
-                  alt="Question mark Icon"
-                />
+                <AiOutlineQuestionCircle size={25}/>
                 <p>Resource Center</p>
               </StyledButton>
             </StyledIconsLower>
@@ -102,11 +94,11 @@ function LeftNav() {
 
         <StyledCol2 className="col2">
           <StyledCol2Button>
-            <StyledIconButton2 src="../imgs/email.png" alt="Email @ Icon" />
+            <GoMention />
             Mentions
           </StyledCol2Button>
           <StyledCol2Button>
-            <StyledIconButton2 src="../imgs/bookmark.png" alt="Bookmark Icon" />
+            <MdBookmark size={20} />
             Bookmarks
           </StyledCol2Button>
 
@@ -171,7 +163,7 @@ function LeftNav() {
 
 const StyledRow = styled.div`
   margin-left: 0;
-  width: 17%;
+  /* width: 17%; */
   display: flex;
 `;
 const StyledCol1 = styled.div`
@@ -182,19 +174,26 @@ const StyledCol1 = styled.div`
   height: 91vh;
 `;
 const StyledCol2 = styled.div`
-  width: 20rem;
+  width: 100%;
   background-color: white;
   position: relative;
+  padding: 0.5rem;
 `;
 const StyledCol2Button = styled.button`
   background-color: transparent;
+  display: flex;
   margin-top: 7px;
   border-color: rgb(0, 0, 0, 0.2);
-  width: 12rem;
+  width: 100%;
+  padding: .3rem;
+  align-items: center;
   margin-left: 13px;
   text-align: justify;
   font-size: 16px;
   cursor: pointer;
+  svg{
+    margin-right: .5rem;
+  }
   &:hover {
     background-color: aliceblue;
   }
