@@ -42,7 +42,6 @@ function ContentFooter(props: PropTypes) {
     });
   };
 
-  
 
   return (
     <StyledFooter className="content-footer">

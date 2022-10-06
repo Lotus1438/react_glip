@@ -19,7 +19,7 @@ function ContentHeader() {
     <StyledContentHeader className="content-header">
       <StyledHeader className="header">
         <StyledIconsLeft className="icons-left">
-          <StyledP>{details.name || details?.team}</StyledP>
+          <StyledP>{details?.name ?? details?.team}</StyledP>
            <div className="icon_cont">
             <AiOutlineStar size={25}/>
             <AiFillLock size={25}/>
