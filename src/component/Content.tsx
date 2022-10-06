@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import styled from "styled-components";
 import ContentHeader from "./ContentHeader";
 import ContentMessages from "./ContentMessages";
@@ -7,17 +7,22 @@ import ContentFooter from "./ContentFooter";
 function Content() {
   const ref = useRef(null);
 
+  useEffect(() => {
+    console.log("refss", ref);
+    
+  }, [ref])
+  
+
   return (
     <StyledContent className="content">
       <StyledHeader>
         <ContentHeader />
       </StyledHeader>
-
       <StyledCont className="cont">
         <ContentMessages />
       </StyledCont>
       <StyledFooter ref={ref}>
-        <ContentFooter refs={ref} />
+        <ContentFooter refs={ref}  />
       </StyledFooter>
     </StyledContent>
   );

@@ -9,6 +9,7 @@ function Context(props: any) {
     activeMessage: {
       id: 0,
       type: "",
+      details: {}
     },
   };
 
