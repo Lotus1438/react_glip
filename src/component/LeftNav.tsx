@@ -44,6 +44,7 @@ function LeftNav() {
         id: id,
         type: "team",
       },
+      details: teams.find(t => t.team_id === id)
     });
   };
   const handlePressUser = (id: number) => {
@@ -53,6 +54,7 @@ function LeftNav() {
         id: id,
         type: "direct",
       },
+      details: users.find(t => t.id === id)
     });
   };
 
