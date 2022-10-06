@@ -1,13 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import { useRef } from "react";
 import styled from "styled-components";
 import ContentHeader from "./ContentHeader";
 import ContentMessages from "./ContentMessages";
 import ContentFooter from "./ContentFooter";
 
 function Content() {
-
   const ref = useRef(null);
-
 
   return (
     <StyledContent className="content">
@@ -31,11 +29,13 @@ const StyledHeader = styled.header`
   padding: 1rem;
   border-bottom: 1px solid rgb(0, 0, 0, 0.2);
 `;
+
 const StyledContent = styled.div`
   display: contents;
   margin-left: 0;
   padding-left: 4rem;
 `;
+
 const StyledCont = styled.div`
   height: 75%;
   overflow-y: auto;

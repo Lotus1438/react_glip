@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import next from "../imgs/next.png";
 import girl from "../imgs/girl.png";
 import hacker from "../imgs/hacker.png";
 import add_user from "../imgs/add-user.png";
-import more from "../imgs/more.png";
 import sticky_note from "../imgs/sticky-note.png";
 import { MdOutlineMoreHoriz, MdKeyboardTab } from "react-icons/md";
 
@@ -60,9 +58,7 @@ function RightNav() {
     </StyledContent>
   );
 }
-const StyledContent = styled.div`
-  // height: 100vh;
-`;
+const StyledContent = styled.div``;
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;

@@ -1,29 +1,47 @@
-import React from "react";
 import styled from "styled-components";
-import girl from '../imgs/girl.png';
-import lessThan from '../imgs/less-than-symbol.png';
-import greaterThan from '../imgs/greater-than-symbol.png';
-
+import girl from "../imgs/girl.png";
+import { MdChevronRight, MdChevronLeft, MdSearch } from "react-icons/md";
+import { useState } from "react";
 
 function Header() {
+  const [showProfile, setShowProfile] = useState(false);
+
+  const toggle = () => {
+    setShowProfile(!showProfile);
+  };
+  
   return (
     <StyledHeader>
+      <StyledProfileButton onClick={toggle}>
       <StyledImgProfile src={girl} alt="Girl Avatar Profile" />
+      </StyledProfileButton>
+      {showProfile && <StyledProfile className="profile">
+        <p>
+        Reina Mates
+        </p>
+        <a href="#">View profile</a>
+        <hr />
+        <p>
+        Share status
+        </p>
+        <p>
+        Invisible 
+        </p>
+        <p>
+        Sign out
+        </p>
+      </StyledProfile>}
       <StyledP>DNA Micro</StyledP>
       <StyledButton>
-        <StyledImgIcon
-          src={lessThan}
-          alt="Less than symbol"
-        />
+      <MdChevronLeft size={25} />
       </StyledButton>
       <StyledButton>
-        <StyledImgIcon
-          src={greaterThan}
-          alt="Greater than symbol"
-        />
+      <MdChevronRight size={25} />
       </StyledButton>
       <StyledInputContainer className="input-container">
-        <StyledIcon className="fa fa-search"></StyledIcon>
+        <StyledIcon>
+        <MdSearch size={25} />
+        </StyledIcon>
         <StyledInput
           className="input-field"
           type="text"
@@ -36,12 +54,27 @@ function Header() {
 }
 
 const StyledHeader = styled.header`
-  background-color: #066fac;
+  background-color: #066FAC;
   padding: 0.2rem;
   display: flex;
   text-align: center;
   padding-top: 12px;
 `;
+const StyledProfileButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+`
+const StyledProfile = styled.div`
+  padding: 0 18px;
+    width: 15rem;
+    background-color: white;
+    position: relative;
+    top: 48px;
+    left: -44px;
+    box-shadow: 5px 5px 5px #b9b9b9;
+    z-index: 1;
+`
 const StyledImgProfile = styled.img`
   width: 40px;
   height: 40px;
@@ -61,17 +94,18 @@ const StyledP = styled.p`
   padding-top: 5px;
   font-family: revert;
 `;
+
 const StyledButton = styled.button`
   border-radius: 50%;
   float: left;
-  // font-size: -267px;
   width: 42px;
   height: 34px;
-  background-color: white;
+  background-color: #a1abb3;
   opacity: 0.3;
   color: white;
   border: none;
   margin: 4px;
+  cursor: pointer;
 `;
 
 const StyledInput = styled.input`
@@ -79,9 +113,9 @@ const StyledInput = styled.input`
   width: 27rem;
   border: none;
   float: left;
-  background-color: white;
+  background-color: #a1abb3;
   opacity: 0.3;
-  color: black !important;
+  color: white;
   font-size: 19px;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -92,16 +126,11 @@ const StyledInputContainer = styled.div`
   width: 100%;
   margin-bottom: 12px;
 `;
-const StyledImgIcon = styled.img`
-  width: 25px;
-  padding-top: 2px;
-  padding-left: 0px;
-  text-align: center;
-`;
+
 const StyledIcon = styled.i`
   margin-top: 1px;
   padding: 16px;
-  background-color: white;
+  background-color: #a1abb3;
   opacity: 0.3;
   color: black;
   text-align: center;
@@ -123,5 +152,7 @@ const StyledPlusButton = styled.button`
   border: none;
   margin: 4px;
   margin-right: 20px;
+  cursor: pointer;
 `;
+
 export default Header;

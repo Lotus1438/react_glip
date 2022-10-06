@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import startIcon from '../imgs/star.png';
-import padlock from '../imgs/padlock.png';
-import account from '../imgs/account.png';
-import videocamera from '../imgs/video-camera.png';
-import menu from '../imgs/menu.png';
-import {AiFillLock, AiOutlineStar, AiOutlineUser, AiOutlineVideoCamera} from 'react-icons/ai'
-import { HiDotsVertical } from 'react-icons/hi'
+import {
+  AiFillLock,
+  AiOutlineStar,
+  AiOutlineUser,
+  AiOutlineVideoCamera,
+} from "react-icons/ai";
+import { HiDotsVertical } from "react-icons/hi";
 
 function ContentHeader() {
   return (
@@ -14,17 +14,17 @@ function ContentHeader() {
       <StyledHeader className="header">
         <StyledIconsLeft className="icons-left">
           <StyledP>TEAMBANGAN-weighs</StyledP>
-           <div className="icon_cont">
-            <AiOutlineStar size={25}/>
-            <AiFillLock size={25}/>
-            <AiOutlineUser size={25}/>
-           </div>
+          <div className="icon_cont">
+            <AiOutlineStar size={25} />
+            <AiFillLock size={25} />
+            <AiOutlineUser size={25} />
+          </div>
         </StyledIconsLeft>
 
-        <StyledIconsRight className="icons-right">
-          <AiOutlineVideoCamera size={25}/>
-          <HiDotsVertical  size={25}/>
-        </StyledIconsRight>
+        <div className="icons-right">
+          <AiOutlineVideoCamera size={25} />
+          <HiDotsVertical size={25} />
+        </div>
       </StyledHeader>
     </StyledContentHeader>
   );
@@ -33,49 +33,31 @@ function ContentHeader() {
 const StyledContentHeader = styled.div`
   font-size: 19px;
   width: 100%;
-  // padding: 1rem;
 `;
+
 const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex:1;
+  flex: 1;
   width: 100%;
 `;
+
 const StyledP = styled.p`
-  // padding-right: 40px;
-  // padding-left: 53px;
   white-space: pre-line;
 `;
-const StyledButton = styled.button`
-  border: none;
-  margin-right: 12px;
-  background-color: transparent;
-  cursor: pointer;
-`;
+
 const StyledIconsLeft = styled.div`
   display: flex;
   align-items: center;
 
-  .icon_cont{
+  .icon_cont {
     margin-left: 1rem;
     display: flex;
-    svg{
+    svg {
       margin-right: 5px;
     }
   }
 `;
-const StyledIconsRight = styled.div`
-  // padding-left: 78rem;
-`;
-const StyledIconButton = styled.img`
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-`;
-const StyledIconButtonRight = styled.img`
-  width: 22px;
-  height: 23px;
-  cursor: pointer;
-`;
+
 export default ContentHeader;

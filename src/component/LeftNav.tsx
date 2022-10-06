@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { AppContext } from "../Context/context";
 import {
@@ -8,10 +8,13 @@ import {
   MdOutlineMoreHoriz,
   MdOutlineSettings,
   MdVideoCameraBack,
-  MdCreateNewFolder,
-  MdToggleOff,
   MdOutlineToggleOff,
+  MdStar,
+  MdGroupWork,
 } from "react-icons/md";
+import {
+  AiOutlineUser,
+} from "react-icons/ai";
 import { FaPuzzlePiece } from "react-icons/fa";
 import { AiOutlineQuestionCircle, AiFillFolderAdd } from "react-icons/ai";
 import { GoMention } from "react-icons/go";
@@ -19,7 +22,7 @@ import { GoMention } from "react-icons/go";
 function LeftNav() {
   const context = useContext(AppContext);
 
-  const { setState, state } = context;
+  const { state, setState } = context;
 
   const users = [
     { name: "Jean Pretzy Rim", id: 1 },
@@ -37,6 +40,10 @@ function LeftNav() {
     { team: "Team Vitamins", team_id: 5 },
   ];
 
+  const favorites = [
+    { favorite: "Reina Mates", favorite_id: 1 },
+  ];
+
   const handlePressTeams = (id: number) => {
     setState({
       ...state,
@@ -46,6 +53,7 @@ function LeftNav() {
       },
     });
   };
+
   const handlePressUser = (id: number) => {
     setState({
       ...state,
@@ -55,6 +63,32 @@ function LeftNav() {
       },
     });
   };
+
+  const handlePressFavorites = (id: number) => {
+    setState({
+      ...state,
+      activeMessage: {
+        id: id,
+        type: "favorites",
+      },
+    });
+  };
+
+  const [showUser, setShowUser] = useState(false);
+  const [showTeam, setShowTeam] = useState(false);
+  const [showFavorite, setShowFavorite] = useState(false);
+
+
+  const showFavorites = () => {
+    setShowFavorite(!showFavorite);
+  };
+  const showUsers = () => {
+    setShowUser(!showUser);
+  };
+  const showTeams = () => {
+    setShowTeam(!showTeam);
+  };
+
 
   return (
     <div>
@@ -99,7 +133,7 @@ function LeftNav() {
 
         <StyledCol2 className="col2">
           <StyledCol2Button>
-            <GoMention />
+            {/* <GoMention /> */}
             Mentions
           </StyledCol2Button>
           <StyledCol2Button>
@@ -109,19 +143,49 @@ function LeftNav() {
 
           <StyledShowUnread>
             <StyledP>Show Unread</StyledP>
-            {/* <StyledShowUnreadIcon
-              src={off_button}
-              alt="Off button Icon"
-            /> */}
-                <MdOutlineToggleOff size={25} />
+            <MdOutlineToggleOff size={25} />
           </StyledShowUnread>
 
           <StyledUsers className="users">
-            <StyledDirectMessageButton>
-              {/* <StyledIconButton2 src={user} alt="User Icon" /> */}
+          <StyledShowUnread>
+          <MdStar size={15} />
+          <StyledDirectMessageButton
+              onClick={
+                showFavorites
+              }
+            >
+              FAVORITES
+            </StyledDirectMessageButton>
+          </StyledShowUnread>
+            {!showFavorite && <StyledUser
+            >
+              <ul>
+                {favorites.map((favorite) => (
+                  <StyledUserli>
+                    <StyledUserA
+                      onClick={() => {
+                        handlePressFavorites(favorite.favorite_id);
+                      }}
+                      href="#"
+                    >
+                      {favorite.favorite}
+                    </StyledUserA>
+                  </StyledUserli>
+                ))}
+              </ul>
+            </StyledUser>}
+            <StyledShowUnread>
+            <AiOutlineUser size={15} />
+            <StyledDirectMessageButton
+              onClick={
+                showUsers
+              }
+            >
               DIRECT MESSAGES
             </StyledDirectMessageButton>
-            <StyledUser className="user">
+            </StyledShowUnread>
+            {!showUser && <StyledUser
+            >
               <ul>
                 {users.map((user) => (
                   <StyledUserli>
@@ -136,13 +200,14 @@ function LeftNav() {
                   </StyledUserli>
                 ))}
               </ul>
-              {/* <StyledIconButtonMenu src={menu} alt="Menu Icon" /> */}
-            </StyledUser>
-            <StyledDirectMessageButton>
-              {/* <StyledIconButton2 src={team} alt="Teams Icon" /> */}
-              TEAMS
-            </StyledDirectMessageButton>
-            <StyledUser className="user">
+            </StyledUser>}
+            <StyledShowUnread>
+            <MdGroupWork size={15} />
+            <StyledDirectMessageButton onClick={
+                showTeams
+              }>TEAMS</StyledDirectMessageButton>
+            </StyledShowUnread>
+            {!showTeam && <StyledUser className="user">
               <ul>
                 {teams.map((team) => (
                   <StyledUserli>
@@ -157,13 +222,11 @@ function LeftNav() {
                   </StyledUserli>
                 ))}
               </ul>
-              {/* <StyledIconButtonMenu src={menu} alt="Menu Icon" /> */}
-            </StyledUser>
+            </StyledUser>}
           </StyledUsers>
 
           <StyledNewFolder>
-            {/* <MdCreateNewFolder size={25} /> */}
-              <AiFillFolderAdd size={25}/>
+            <AiFillFolderAdd size={25} />
             <StyledP>New Folder</StyledP>
           </StyledNewFolder>
         </StyledCol2>
@@ -174,10 +237,10 @@ function LeftNav() {
 
 const StyledRow = styled.div`
   margin-left: 0;
-  /* width: 17%; */
   display: flex;
   position: relative;
 `;
+
 const StyledCol1 = styled.div`
   width: 5rem;
   display: flex;
@@ -185,6 +248,7 @@ const StyledCol1 = styled.div`
   justify-content: space-between;
   height: 91vh;
 `;
+
 const StyledCol2 = styled.div`
   width: 100%;
   background-color: white;
@@ -192,6 +256,7 @@ const StyledCol2 = styled.div`
   padding: 0.5rem;
   border-right: 1px solid #eae8e8;
 `;
+
 const StyledCol2Button = styled.button`
   background-color: transparent;
   display: flex;
@@ -211,18 +276,21 @@ const StyledCol2Button = styled.button`
     background-color: aliceblue;
   }
 `;
+
 const StyledUsers = styled.div`
   display: block;
   position: absolute;
   font-size: 20px;
   padding: 6px;
 `;
+
 const StyledUser = styled.div`
   display: block;
   align-items: center;
   text-align: initial;
   font-size: 18px;
 `;
+
 const StyledButton = styled.button`
   border: none;
   background-color: white;
@@ -234,29 +302,9 @@ const StyledButton = styled.button`
 const StyledIconsUpper = styled.div`
   top: 0%;
 `;
+
 const StyledIconsLower = styled.div`
   bottom: 0%;
-`;
-const StyledIconButton = styled.img`
-  width: 20px;
-  height: 26px;
-  background-color: white;
-  margin-left: -1px;
-  cursor: pointer;
-`;
-const StyledIconButtonMenu = styled.img`
-  width: 14px;
-  height: 16px;
-  background-color: white;
-  margin-left: 200px;
-`;
-const StyledIconButton2 = styled.img`
-  width: 17px;
-  height: 18px;
-  background-color: white;
-  margin-left: 3px;
-  margin-top: 12px;
-  margin-right: 8px;
 `;
 const StyledUserli = styled.li`
   font-size: 16px;
@@ -266,10 +314,12 @@ const StyledUserli = styled.li`
     background-color: aliceblue;
   }
 `;
+
 const StyledUserA = styled.a`
   color: rgb(0, 0, 0, 0.5);
   text-decoration: none;
 `;
+
 const StyledDirectMessageButton = styled.button`
   background-color: transparent;
   margin-top: 10px;
@@ -281,6 +331,7 @@ const StyledDirectMessageButton = styled.button`
   cursor: pointer;
   font-weight: bold;
 `;
+
 const StyledIconCont = styled.div`
   height: 91vh;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
@@ -292,6 +343,7 @@ const StyledShowUnread = styled.div`
   align-items: center;
   margin-top: 15px;
 `;
+
 const StyledNewFolder = styled.div`
   align-items: center;
   display: flex;
@@ -305,15 +357,10 @@ const StyledNewFolder = styled.div`
   border-right: none;
   width: 100%;
 `;
+
 const StyledP = styled.p`
   justify-content: center;
   font-size: 15px;
 `;
-const StyledShowUnreadIcon = styled.img`
-  width: 39px;
-`;
 
-const StyledNewFolderIcon = styled.img`
-  width: 28px;
-`;
 export default LeftNav;

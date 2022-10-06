@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Header from "./Header";
 import LeftNav from "./LeftNav";
@@ -7,7 +6,7 @@ import RightNav from "./RightNav";
 
 function Container() {
   return (
-    <StyledMain>
+    <div>
       <Header />
       <StyledContainer className="container">
         <StyledSidebarLeft className="sidebar-left">
@@ -20,27 +19,24 @@ function Container() {
           <RightNav />
         </StyledSidebarRight>
       </StyledContainer>
-    </StyledMain>
+    </div>
   );
 }
-const StyledMain = styled.div`
-  // height: 100vh;
-`;
 const StyledContainer = styled.div`
   width: 100vw;
   display: flex;
 `;
+
 const StyledSidebarLeft = styled.div`
   width: 15%;
-  // height: 100vh;
 `;
+
 const StyledMainContent = styled.div`
   width: 67%;
-  // height: 100vh;
 `;
+
 const StyledSidebarRight = styled.div`
   width: 18%;
-  // height: 100vh;
   border-left: 1px solid rgba(0, 0, 0, 0.2);
 `;
 
