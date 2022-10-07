@@ -41,9 +41,10 @@ function ContentMessages() {
         return (
           <StyledMsgContent key={msg.user_id}>
             <StyledText>
-              <div className="profile">
+              {/* <div className="profile">
                 <img src={msg.user === 'you' ? msgs.user_profile : msgs.recipient_profile } alt="tes" />
-              </div>
+              </div> */}
+            <StyledImgIcon src={girl_with_bangs} alt="Girl with bangs Avatar Icon" />
               <StyledTextUser>{msgs.user_name}</StyledTextUser>
               <StyledTextMessage>{msg.message}</StyledTextMessage>
             </StyledText>
@@ -110,6 +111,8 @@ const StyledText = styled.text`
   display: inline-block;
   text-align: justify;
   line-height: 30px;
+  width: 11%;
+  margin-left: 5rem;
   .profile{
     img{
       width: 30px;
@@ -119,6 +122,7 @@ const StyledText = styled.text`
 
 const StyledTextMessage = styled.p`
   font-size: 16px;
+  margin-left: 41px;
 `;
 
 const StyledTextUser = styled.p`
@@ -136,6 +140,9 @@ const StyledImgIcon = styled.img`
   text-align: center;
   float: left;
   margin-right: 12px;
+    span{
+      text-indent: 10rem;
+    }
 `;
 
 export default ContentMessages;
