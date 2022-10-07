@@ -1,4 +1,6 @@
 import girl_with_bangs from "../imgs/girl-with-bangs.png";
+const dummyImage = "https://allworldpm.com/wp-content/uploads/2016/10/230x230-avatar-dummy-profile-pic.jpg";
+
 export const messages = [
   {
     id: "1",
@@ -161,7 +163,8 @@ export const directMessages = [
   {
     id: "1",
     user_name: "Jean Pretzy Rim",
-    user_profile: { girl_with_bangs },
+    user_profile: girl_with_bangs,
+    recipient_profile: dummyImage,
     user_id: 1,
     details: [
       { message: "Good day this is Jean!", time: "07:11", user: "you" },
@@ -177,7 +180,8 @@ export const directMessages = [
   {
     id: "2",
     user_name: "Junne Toral",
-    user_profile: { girl_with_bangs },
+    user_profile: girl_with_bangs,
+    recipient_profile: dummyImage,
     user_id: 2,
     details: [
       { message: "Good day this is Junne!", time: "04:11", user: "you" },
@@ -193,7 +197,8 @@ export const directMessages = [
   {
     id: "3",
     user_name: "Leslie Marie Reyes",
-    user_profile: { girl_with_bangs },
+    user_profile: girl_with_bangs,
+    recipient_profile: dummyImage,
     user_id: 3,
     details: [
       { message: "Good day this is Leslie!", time: "03:11", user: "you" },
@@ -209,7 +214,8 @@ export const directMessages = [
   {
     id: "4",
     user_name: "Philip John Batulan",
-    user_profile: { girl_with_bangs },
+    user_profile: girl_with_bangs,
+    recipient_profile: dummyImage,
     user_id: 4,
     details: [
       { message: "Good day this is Philip!", time: "03:11", user: "you" },
@@ -225,7 +231,8 @@ export const directMessages = [
   {
     id: "5",
     user_name: "Juphet Vitualla",
-    user_profile: "{girl_with_bangs}",
+    user_profile: girl_with_bangs,
+    recipient_profile: dummyImage,
     user_id: 5,
     details: [
       { message: "Good day this is Juphet!", time: "03:11", user: "you" },
@@ -243,7 +250,8 @@ export const favoriteMessages = [
   {
     id: "1",
     user_name: "Reina Mates",
-    user_profile: { girl_with_bangs },
+    user_profile: girl_with_bangs,
+    recipient_profile: dummyImage,
     user_id: 1,
     details: [
       { message: "Good day this is Reina!", time: "07:11", user: "you" },

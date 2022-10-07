@@ -29,9 +29,15 @@ function ContentMessages() {
     const msgs = directMessages.find((msg) => msg.user_id === id);
     if (msgs) {
       return msgs.details?.map((msg: any) => {
+
+        console.log("msg", msg);
+        
         return (
           <StyledMsgContent key={msg.user_id}>
             <StyledText>
+              <div className="profile">
+                <img src={msg.user === 'you' ? msgs.user_profile : msgs.recipient_profile } alt="tes" />
+              </div>
               <StyledTextUser>{msgs.user_name}</StyledTextUser>
               <StyledTextMessage>{msg.message}</StyledTextMessage>
             </StyledText>
@@ -98,6 +104,11 @@ const StyledText = styled.text`
   display: inline-block;
   text-align: justify;
   line-height: 30px;
+  .profile{
+    img{
+      width: 30px;
+    }
+  }
 `;
 
 const StyledTextMessage = styled.p`
