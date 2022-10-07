@@ -34,14 +34,14 @@ function ContentFooter(props: PropTypes) {
   return (
     <StyledFooter className="content-footer">
       <StyledFooterIcons className="icons">
-        <GiNotebook size={20} />
-        <GrAttachment size={20} />
-        <MdInsertEmoticon size={20} />
-        <AiOutlineFileGif size={20} />
-        <AiOutlineCheckCircle size={20} />
-        <AiOutlineCalendar size={20} />
-        <MdOutlineStickyNote2 size={20} />
-        <AiFillCode size={20} />
+        <GiNotebook size={20} color="gray" />
+        <GrAttachment size={20} color="gray" />
+        <MdInsertEmoticon size={20} color="gray" />
+        <AiOutlineFileGif size={20} color="gray" />
+        <AiOutlineCheckCircle size={20} color="gray" />
+        <AiOutlineCalendar size={20} color="gray" />
+        <MdOutlineStickyNote2 size={20} color="gray" />
+        <AiFillCode size={20} color="gray" />
       </StyledFooterIcons>
       <StlyedTextarea
         style={{
@@ -93,6 +93,7 @@ const StyledFooterIcons = styled.div`
   padding: 15px 15px 0;
   svg {
     margin-right: 1rem;
+    cursor: pointer;
   }
 `;
 

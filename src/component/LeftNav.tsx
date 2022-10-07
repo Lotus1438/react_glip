@@ -1,20 +1,19 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import { AppContext } from "../Context/context";
 import {
   MdBookmark,
   MdForum,
-  MdMenuBook,
   MdOutlineMoreHoriz,
   MdOutlineSettings,
-  MdVideoCameraBack,
   MdOutlineToggleOff,
   MdStar,
   MdGroupWork,
+  MdCircle,
+  MdOutlineVideoCameraBack,
+  MdOutlineSupervisedUserCircle,
 } from "react-icons/md";
-import {
-  AiOutlineUser,
-} from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 import { FaPuzzlePiece } from "react-icons/fa";
 import { AiOutlineQuestionCircle, AiFillFolderAdd } from "react-icons/ai";
 import { GoMention } from "react-icons/go";
@@ -30,6 +29,9 @@ function LeftNav() {
     { name: "Leslie Marie Reyes", id: 3 },
     { name: "Philip John Batulan", id: 4 },
     { name: "Juphet Vitualla", id: 5 },
+    { name: "Maruelle Gulfan", id: 6 },
+    { name: "Ray Robin Gonzaga", id: 7 },
+    { name: "Annabelle Caamod", id: 8 },
   ];
 
   const teams = [
@@ -41,7 +43,7 @@ function LeftNav() {
   ];
 
   const favorites = [
-    { favorite: "Reina Mates", favorite_id: 1 },
+    { favorite: "Reina Mates", favorite_id: 1 }
   ];
 
   const handlePressTeams = (id: number) => {
@@ -51,7 +53,7 @@ function LeftNav() {
         id: id,
         type: "team",
       },
-      details: teams.find(t => t.team_id === id)
+      details: teams.find((team) => team.team_id === id),
     });
   };
 
@@ -62,7 +64,7 @@ function LeftNav() {
         id: id,
         type: "direct",
       },
-      details: users.find(t => t.id === id)
+      details: users.find((user) => user.id === id),
     });
   };
 
@@ -71,15 +73,16 @@ function LeftNav() {
       ...state,
       activeMessage: {
         id: id,
-        type: "favorites",
+        type: "favorite",
       },
+      details: favorites.find((fav) => fav.favorite_id === id),
     });
   };
+
 
   const [showUser, setShowUser] = useState(false);
   const [showTeam, setShowTeam] = useState(false);
   const [showFavorite, setShowFavorite] = useState(false);
-
 
   const showFavorites = () => {
     setShowFavorite(!showFavorite);
@@ -91,7 +94,6 @@ function LeftNav() {
     setShowTeam(!showTeam);
   };
 
-
   return (
     <div>
       <StyledRow className="row">
@@ -99,34 +101,34 @@ function LeftNav() {
           <StyledCol1 className="col1">
             <StyledIconsUpper className="icons-upper">
               <StyledButton>
-                <MdForum size={25} />
+                <MdForum size={25} color="#066fac" />
                 <p>Message</p>
               </StyledButton>
               <StyledButton>
-                <MdVideoCameraBack size={25} />
+                <MdOutlineVideoCameraBack size={25} color="#585151" />
                 <p>Video</p>
               </StyledButton>
               <StyledButton>
-                <MdMenuBook size={25} />
+                <MdOutlineSupervisedUserCircle size={25} color="#585151" />
                 <p>Contacts</p>
               </StyledButton>
               <StyledButton>
-                <MdOutlineMoreHoriz size={25} />
+                <MdOutlineMoreHoriz size={25} color="#585151" />
                 <p>More</p>
               </StyledButton>
             </StyledIconsUpper>
 
             <StyledIconsLower>
               <StyledButton>
-                <FaPuzzlePiece size={25} />
+                <FaPuzzlePiece size={25} color="#585151" />
                 <p>Apps</p>
               </StyledButton>
               <StyledButton>
-                <MdOutlineSettings size={25} />
+                <MdOutlineSettings size={25} color="#585151" />
                 <p>Settings</p>
               </StyledButton>
               <StyledButton>
-                <AiOutlineQuestionCircle size={25} />
+                <AiOutlineQuestionCircle size={25} color="#585151" />
                 <p>Resource Center</p>
               </StyledButton>
             </StyledIconsLower>
@@ -135,100 +137,99 @@ function LeftNav() {
 
         <StyledCol2 className="col2">
           <StyledCol2Button>
-            {/* <GoMention /> */}
+            <GoMention />
             Mentions
           </StyledCol2Button>
           <StyledCol2Button>
-            <MdBookmark size={20} />
+            <MdBookmark size={20} color="#066fac" />
             Bookmarks
           </StyledCol2Button>
 
           <StyledShowUnread>
             <StyledP>Show Unread</StyledP>
-            <MdOutlineToggleOff size={25} />
+            <MdOutlineToggleOff size={25} color="#585151" />
           </StyledShowUnread>
 
           <StyledUsers className="users">
-          <StyledShowUnread>
-          <MdStar size={15} />
-          <StyledDirectMessageButton
-              onClick={
-                showFavorites
-              }
-            >
-              FAVORITES
-            </StyledDirectMessageButton>
-          </StyledShowUnread>
-            {!showFavorite && <StyledUser
-            >
-              <ul>
-                {favorites.map((favorite) => (
-                  <StyledUserli>
-                    <StyledUserA
-                      onClick={() => {
-                        handlePressFavorites(favorite.favorite_id);
-                      }}
-                      href="#"
-                    >
-                      {favorite.favorite}
-                    </StyledUserA>
-                  </StyledUserli>
-                ))}
-              </ul>
-            </StyledUser>}
             <StyledShowUnread>
-            <AiOutlineUser size={15} />
-            <StyledDirectMessageButton
-              onClick={
-                showUsers
-              }
-            >
-              DIRECT MESSAGES
-            </StyledDirectMessageButton>
+              <MdStar size={15} color="gray" />
+              <StyledDirectMessageButton onClick={showFavorites}>
+                FAVORITES
+              </StyledDirectMessageButton>
             </StyledShowUnread>
-            {!showUser && <StyledUser
-            >
-              <ul>
-                {users.map((user) => (
-                  <StyledUserli>
-                    <StyledUserA
-                      onClick={() => {
-                        handlePressUser(user.id);
-                      }}
-                      href="#"
-                    >
-                      {user.name}
-                    </StyledUserA>
-                  </StyledUserli>
-                ))}
-              </ul>
-            </StyledUser>}
+            {!showFavorite && (
+              <StyledUser>
+                <ul>
+                  {favorites.map((favorite) => (
+                    <StyledUserli>
+                      <StyledUserA
+                        onClick={() => {
+                          handlePressFavorites(favorite.favorite_id);
+                        }}
+                        href="#"
+                      >
+                        <MdCircle size={10} />
+                        {favorite.favorite}
+                      </StyledUserA>
+                    </StyledUserli>
+                  ))}
+                </ul>
+              </StyledUser>
+            )}
             <StyledShowUnread>
-            <MdGroupWork size={15} />
-            <StyledDirectMessageButton onClick={
-                showTeams
-              }>TEAMS</StyledDirectMessageButton>
+              <AiOutlineUser size={15} />
+              <StyledDirectMessageButton onClick={showUsers}>
+                DIRECT MESSAGES
+              </StyledDirectMessageButton>
             </StyledShowUnread>
-            {!showTeam && <StyledUser className="user">
-              <ul>
-                {teams.map((team) => (
-                  <StyledUserli>
-                    <StyledUserA
-                      onClick={() => {
-                        handlePressTeams(team.team_id);
-                      }}
-                      href="#"
-                    >
-                      {team.team}
-                    </StyledUserA>
-                  </StyledUserli>
-                ))}
-              </ul>
-            </StyledUser>}
+            {!showUser && (
+              <StyledUser>
+                <ul>
+                  {users.map((user) => (
+                    <StyledUserli>
+                      <StyledUserA
+                        onClick={() => {
+                          handlePressUser(user.id);
+                        }}
+                        href="#"
+                      >
+                        <MdCircle size={10} />
+                        {user.name}
+                      </StyledUserA>
+                    </StyledUserli>
+                  ))}
+                </ul>
+              </StyledUser>
+            )}
+            <StyledShowUnread>
+              <MdGroupWork size={15} color="gray" />
+              <StyledDirectMessageButton onClick={showTeams}>
+                TEAMS
+              </StyledDirectMessageButton>
+            </StyledShowUnread>
+            {!showTeam && (
+              <StyledUser className="user">
+                <ul>
+                  {teams.map((team) => (
+                    <StyledUserli>
+                      <StyledUserA
+                        onClick={() => {
+                          handlePressTeams(team.team_id);
+                        }}
+                        href="#"
+                      >
+                        <MdCircle size={10} />
+                        {team.team}
+                      </StyledUserA>
+                    </StyledUserli>
+                  ))}
+                </ul>
+              </StyledUser>
+            )}
           </StyledUsers>
 
           <StyledNewFolder>
-            <AiFillFolderAdd size={25} />
+            <AiFillFolderAdd size={25} color="#237bad" />
             <StyledP>New Folder</StyledP>
           </StyledNewFolder>
         </StyledCol2>
@@ -256,7 +257,10 @@ const StyledCol2 = styled.div`
   background-color: white;
   position: relative;
   padding: 0.5rem;
-  border-right: 1px solid #eae8e8;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+
 `;
 
 const StyledCol2Button = styled.button`
@@ -284,6 +288,9 @@ const StyledUsers = styled.div`
   position: absolute;
   font-size: 20px;
   padding: 6px;
+  overflow-y: scroll;
+  scrollbar-color: gray;
+    width: 100%;
 `;
 
 const StyledUser = styled.div`
@@ -296,9 +303,10 @@ const StyledUser = styled.div`
 const StyledButton = styled.button`
   border: none;
   background-color: white;
+  cursor: pointer;
   padding: 10px;
   &:hover {
-    background-color: aliceblue;
+    background-color: #bbddfa;
   }
 `;
 const StyledIconsUpper = styled.div`
@@ -312,14 +320,18 @@ const StyledUserli = styled.li`
   font-size: 16px;
   padding: 6px;
   list-style: none;
+  &:focus{
+      background-color: #066fac;
+    }
   &:hover {
-    background-color: aliceblue;
+    background-color: #bbddfa;
   }
 `;
 
 const StyledUserA = styled.a`
   color: rgb(0, 0, 0, 0.5);
   text-decoration: none;
+  align-items: end;
 `;
 
 const StyledDirectMessageButton = styled.button`
@@ -344,6 +356,7 @@ const StyledShowUnread = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 15px;
+  align-items: end;
 `;
 
 const StyledNewFolder = styled.div`
@@ -357,7 +370,6 @@ const StyledNewFolder = styled.div`
   border: 1px solid #e7e7e7;
   border-left: none;
   border-right: none;
-  width: 100%;
 `;
 
 const StyledP = styled.p`

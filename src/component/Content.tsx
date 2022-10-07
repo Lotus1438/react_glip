@@ -9,9 +9,7 @@ function Content() {
 
   useEffect(() => {
     console.log("refss", ref);
-    
-  }, [ref])
-  
+  }, [ref]);
 
   return (
     <StyledContent className="content">
@@ -22,7 +20,7 @@ function Content() {
         <ContentMessages />
       </StyledCont>
       <StyledFooter ref={ref}>
-        <ContentFooter refs={ref}  />
+        <ContentFooter refs={ref} />
       </StyledFooter>
     </StyledContent>
   );
@@ -44,6 +42,7 @@ const StyledContent = styled.div`
 const StyledCont = styled.div`
   height: 75%;
   overflow-y: auto;
+  scrollbar-color: gray transparent;
 `;
 
 const StyledFooter = styled.footer`

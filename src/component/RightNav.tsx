@@ -5,13 +5,15 @@ import hacker from "../imgs/hacker.png";
 import add_user from "../imgs/add-user.png";
 import sticky_note from "../imgs/sticky-note.png";
 import { MdOutlineMoreHoriz, MdKeyboardTab } from "react-icons/md";
+import { AiOutlineUserAdd } from "react-icons/ai";
+
 
 function RightNav() {
   return (
     <StyledContent className="Content">
       <StyledHeader>
         <p>Members(3)</p>
-        <MdKeyboardTab size={25} />
+        <MdKeyboardTab size={20} color="#585151" />
       </StyledHeader>
 
       <StyledAvatarsProfile className="avatars_profile">
@@ -22,7 +24,7 @@ function RightNav() {
           <StyledImgIcon src={hacker} alt="Hacker Avatar Icon" />
         </StyledImgButton>
         <StyledImgButton>
-          <StyledImgIcon src={add_user} alt="Add User Icon" />
+          <AiOutlineUserAdd size={20} color="#585151" />
         </StyledImgButton>
       </StyledAvatarsProfile>
 
@@ -41,7 +43,7 @@ function RightNav() {
           </StyledLi>
         </StyledUl>
         <StyledButton>
-          <MdOutlineMoreHoriz size={25} />
+          <MdOutlineMoreHoriz size={25} color="#585151" />
         </StyledButton>
       </StyledMenu>
 
