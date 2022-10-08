@@ -79,28 +79,33 @@ function ContentMessages() {
 }
 
 const StyledMessages = styled.div`
-  padding-left: 71px;
-  padding-right: 30px;
   line-height: 42px;
   font-size: 20px;
   padding-top: 27px;
-  justify-content: space-between;
+  display: flex;
 `;
 
 const StyledMessage = styled.div`
   display: block;
-  justify-content: right;
-  margin-left: -65rem;
-  margin-right: 2rem;
   overflow-y: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  padding: 0 1rem;
 `;
 
-const StyledMsgContent = styled.div``;
+const StyledMsgContent = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+`;
 const StyledText = styled.text`
   font-size: 17px;
-  display: inline-block;
+  width: 100%;
   text-align: justify;
   line-height: 30px;
+ 
   .profile{
     img{
       width: 30px;
