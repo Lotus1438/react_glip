@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import girl from "../imgs/girl.png";
-import hacker from "../imgs/hacker.png";
-import add_user from "../imgs/add-user.png";
-import sticky_note from "../imgs/sticky-note.png";
+import girl from "../../imgs/girl.png";
+import hacker from "../../imgs/hacker.png";
+import add_user from "../../imgs/add-user.png";
+import sticky_note from "../../imgs/sticky-note.png";
 import { MdOutlineMoreHoriz, MdKeyboardTab } from "react-icons/md";
 
 function RightNav() {

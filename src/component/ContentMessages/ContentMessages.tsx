@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { directMessages, favoriteMessages, messages } from "../messages";
-import { AppContext } from "../Context/context";
+import { AppContext } from "../../Context/context";
+import { directMessages, favoriteMessages, messages } from "../../messages";
 
 function ContentMessages() {
   const context = useContext(AppContext);
@@ -29,9 +29,6 @@ function ContentMessages() {
     const msgs = directMessages.find((msg) => msg.user_id === id);
     if (msgs) {
       return msgs.details?.map((msg: any) => {
-
-        console.log("msg", msg);
-        
         return (
           <StyledMsgContent key={msg.user_id}>
             <StyledText>

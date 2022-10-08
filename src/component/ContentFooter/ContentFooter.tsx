@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { GiNotebook } from "react-icons/gi";
 import { GrAttachment } from "react-icons/gr";
@@ -14,15 +14,24 @@ import { RiSendPlaneFill } from "react-icons/ri";
 interface PropTypes {
   inputValue?: string;
   message?: string;
-  refs?: React.MutableRefObject<any>;
+  messageWidth: number;
 }
 function ContentFooter(props: PropTypes) {
-  const { refs } = props;
+  const { messageWidth } = props;
   const initState = {
     inputValue: "",
     message: props.message,
   };
   const [message, setMessage] = useState(initState);
+  const [textWidth, setTextWidth] = useState(messageWidth)
+  
+  useEffect(() => {
+    console.log("messageWidth", messageWidth);
+    
+    setTextWidth(messageWidth - 20)
+  }, [messageWidth])
+  
+  
 
   const submitMessage = () => {
     setMessage({
@@ -45,8 +54,8 @@ function ContentFooter(props: PropTypes) {
       </StyledFooterIcons>
       <StlyedTextarea
         style={{
-          width: refs?.current?.clientWidth
-            ? `${refs?.current?.clientWidth}px`
+          width: textWidth
+            ? `${textWidth}px`
             : "100%",
         }}
       >

@@ -7,7 +7,8 @@ import videocamera from '../imgs/video-camera.png';
 import menu from '../imgs/menu.png';
 import {AiFillLock, AiOutlineStar, AiOutlineUser, AiOutlineVideoCamera} from 'react-icons/ai'
 import { HiDotsVertical } from 'react-icons/hi'
-import { AppContext } from "../Context/context";
+import { AppContext } from "../../Context/context";
+
 
 function ContentHeader() {
 

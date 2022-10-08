@@ -1,8 +1,5 @@
 import styled from "styled-components";
-import Header from "./Header";
-import LeftNav from "./LeftNav";
-import Content from "./Content";
-import RightNav from "./RightNav";
+import { Content, Header, LeftNav, RightNav } from "..";
 
 function Container() {
   return (
