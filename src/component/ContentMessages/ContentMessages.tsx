@@ -2,6 +2,9 @@ import { useContext } from "react";
 import styled from "styled-components";
 import { AppContext } from "../../Context/context";
 import { directMessages, favoriteMessages, messages } from "../../messages";
+import girl from '../../imgs/girl.png'
+import hacker from '../../imgs/hacker.png'
+import girl_with_bangs from '../../imgs/girl-with-bangs.png'
 
 function ContentMessages() {
   const context = useContext(AppContext);

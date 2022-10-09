@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import girl from "../../imgs/girl.png";
-import { MdChevronRight, MdChevronLeft, MdSearch } from "react-icons/md";
+import { MdChevronRight, MdChevronLeft, MdSearch, MdCircle } from "react-icons/md";
 import { useState } from "react";
 
 function Header() {
