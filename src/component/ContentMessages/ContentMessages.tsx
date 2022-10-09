@@ -1,12 +1,10 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { directMessages, favoriteMessages, messages } from "../messages";
-import { AppContext } from "../Context/context";
-import girl from "../imgs/girl.png";
-import hacker from "../imgs/hacker.png";
-import girl_with_bangs from "../imgs/girl-with-bangs.png";
-
-
+import { AppContext } from "../../Context/context";
+import { directMessages, favoriteMessages, messages } from "../../messages";
+import girl from '../../imgs/girl.png'
+import hacker from '../../imgs/hacker.png'
+import girl_with_bangs from '../../imgs/girl-with-bangs.png'
 
 function ContentMessages() {
   const context = useContext(AppContext);
@@ -35,9 +33,6 @@ function ContentMessages() {
     const msgs = directMessages.find((msg) => msg.user_id === id);
     if (msgs) {
       return msgs.details?.map((msg: any) => {
-
-        console.log("msg", msg);
-        
         return (
           <StyledMsgContent key={msg.user_id}>
             <StyledText>
@@ -88,31 +83,33 @@ function ContentMessages() {
 }
 
 const StyledMessages = styled.div`
-/* height: 100vh; */
-  padding-left: 71px;
-  padding-right: 30px;
   line-height: 42px;
   font-size: 20px;
   padding-top: 27px;
-  justify-content: space-between;
+  display: flex;
 `;
 
 const StyledMessage = styled.div`
   display: block;
-  justify-content: right;
-  margin-left: -65rem;
-  margin-right: -1rem;
   overflow-y: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  padding: 0 1rem;
 `;
 
-const StyledMsgContent = styled.div``;
+const StyledMsgContent = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+`;
 const StyledText = styled.text`
   font-size: 17px;
-  display: inline-block;
+  width: 100%;
   text-align: justify;
   line-height: 30px;
-  width: 11%;
-  margin-left: 5rem;
+ 
   .profile{
     img{
       width: 30px;

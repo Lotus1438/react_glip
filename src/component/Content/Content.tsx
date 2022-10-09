@@ -1,15 +1,25 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
-import ContentHeader from "./ContentHeader";
-import ContentMessages from "./ContentMessages";
-import ContentFooter from "./ContentFooter";
+import { ContentFooter, ContentHeader, ContentMessages } from "..";
+
 
 function Content() {
-  const ref = useRef(null);
+  const ref = useRef<any>(null);
+  const [textWidth, setTextWidth] = useState(0)
+
+  const resizeFunc = () => {
+    setTextWidth(ref?.current?.clientWidth)
+  }
 
   useEffect(() => {
-    console.log("refss", ref);
-  }, [ref]);
+    resizeFunc()
+    window.addEventListener('resize', resizeFunc)
+    return () => {
+      window.removeEventListener('resize', resizeFunc)
+    }
+  }, [ref])
+  
+
 
   return (
     <StyledContent className="content">
@@ -20,7 +30,7 @@ function Content() {
         <ContentMessages />
       </StyledCont>
       <StyledFooter ref={ref}>
-        <ContentFooter refs={ref} />
+        <ContentFooter messageWidth={textWidth}  />
       </StyledFooter>
     </StyledContent>
   );

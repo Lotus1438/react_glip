@@ -1,8 +1,5 @@
 import styled from "styled-components";
-import Header from "./Header";
-import LeftNav from "./LeftNav";
-import Content from "./Content";
-import RightNav from "./RightNav";
+import { Content, Header, LeftNav, RightNav } from "..";
 
 function Container() {
   return (
@@ -29,15 +26,15 @@ const StyledContainer = styled.div`
 `;
 
 const StyledSidebarLeft = styled.div`
-  width: 15%;
+  width: 318px;
 `;
 
 const StyledMainContent = styled.div`
-  width: 67%;
+  flex: 1;
 `;
 
 const StyledSidebarRight = styled.div`
-  width: 18%;
+  width: 320px;
   border-left: 1px solid rgba(0, 0, 0, 0.2);
 `;
 

@@ -1,13 +1,9 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import {
-  AiFillLock,
-  AiOutlineStar,
-  AiOutlineUser,
-  AiOutlineVideoCamera,
-} from "react-icons/ai";
-import { HiDotsVertical } from "react-icons/hi";
-import { AppContext } from "../Context/context";
+import {AiFillLock, AiOutlineStar, AiOutlineUser, AiOutlineVideoCamera} from 'react-icons/ai'
+import { HiDotsVertical } from 'react-icons/hi'
+import { AppContext } from "../../Context/context";
+
 
 function ContentHeader() {
   const context = useContext(AppContext);

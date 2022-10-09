@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import styled from "styled-components";
-import { AppContext } from "../Context/context";
 import {
   MdBookmark,
   MdForum,
@@ -17,6 +16,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { FaPuzzlePiece } from "react-icons/fa";
 import { AiOutlineQuestionCircle, AiFillFolderAdd } from "react-icons/ai";
 import { GoMention } from "react-icons/go";
+import { AppContext } from "../../Context/context";
 
 function LeftNav() {
   const context = useContext(AppContext);
@@ -356,7 +356,10 @@ const StyledShowUnread = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 15px;
-  align-items: end;
+  button{
+    margin-top: 0!important;
+    margin-left: 3px;
+  }
 `;
 
 const StyledNewFolder = styled.div`

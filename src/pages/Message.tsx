@@ -1,8 +1,5 @@
 import React from 'react'
-import Container from '../component/Container'
-import Header from '../component/Header'
-import LeftNav from '../component/LeftNav'
-import RightNav from '../component/RightNav'
+import { Container, Header, LeftNav, RightNav } from '../component'
 
 function Message() {
   return (
