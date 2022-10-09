@@ -9,38 +9,37 @@ function Header() {
   const toggle = () => {
     setShowProfile(!showProfile);
   };
-  
+
   return (
     <StyledHeader>
       <StyledProfileButton onClick={toggle}>
-      <StyledImgProfile src={girl} alt="Girl Avatar Profile" />
+        <StyledImgProfile src={girl} alt="Girl Avatar Profile" />
       </StyledProfileButton>
-      {showProfile && <StyledProfile className="profile">
-        <p>
-        Reina Mates
-        </p>
-        <a href="#">View profile</a>
-        <hr />
-        <p>
-        Share status
-        </p>
-        <p>
-        Invisible 
-        </p>
-        <p>
-        Sign out
-        </p>
-      </StyledProfile>}
+      <span>
+        <MdCircle color="#03f903" />
+      </span>
+      {showProfile && (
+        <StyledProfile className="profile">
+          <p>Reina Mates</p>
+          <a href="#">View profile</a>
+          <hr />
+          <p>Share status</p>
+          <p>Invisible</p>
+          <p>Sign out</p>
+        </StyledProfile>
+      )}
       <StyledP>DNA Micro</StyledP>
       <StyledButton>
-      <MdChevronLeft size={25} />
+        <MdChevronLeft size={25} />
       </StyledButton>
       <StyledButton>
-      <MdChevronRight size={25} />
+        <MdChevronRight size={25} />
       </StyledButton>
       <StyledInputContainer className="input-container">
         <StyledIcon>
-        <MdSearch size={25} />
+          <span>
+            <MdSearch size={25} color="white" />
+          </span>
         </StyledIcon>
         <StyledInput
           className="input-field"
@@ -54,27 +53,32 @@ function Header() {
 }
 
 const StyledHeader = styled.header`
-  background-color: #066FAC;
+  background-color: #066fac;
   padding: 0.2rem;
   display: flex;
   text-align: center;
   padding-top: 12px;
+  span {
+    position: relative;
+    top: 32px;
+    left: -16px;
+  }
 `;
 const StyledProfileButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-`
+`;
 const StyledProfile = styled.div`
   padding: 0 18px;
-    width: 15rem;
-    background-color: white;
-    position: relative;
-    top: 48px;
-    left: -44px;
-    box-shadow: 5px 5px 5px #b9b9b9;
-    z-index: 1;
-`
+  width: 15rem;
+  background-color: white;
+  position: relative;
+  top: 48px;
+  left: -44px;
+  box-shadow: 5px 5px 5px #b9b9b9;
+  z-index: 1;
+`;
 const StyledImgProfile = styled.img`
   width: 40px;
   height: 40px;
@@ -98,8 +102,8 @@ const StyledP = styled.p`
 const StyledButton = styled.button`
   border-radius: 50%;
   float: left;
-  width: 42px;
-  height: 34px;
+  width: 41px;
+  height: 31px;
   background-color: #a1abb3;
   opacity: 0.3;
   color: white;
@@ -138,6 +142,12 @@ const StyledIcon = styled.i`
   margin-left: 8px;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
+  cursor: pointer;
+  span {
+    position: relative;
+    top: -10px;
+    left: -4px;
+  }
 `;
 
 const StyledPlusButton = styled.button`

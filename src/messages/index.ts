@@ -8,10 +8,10 @@ export const messages = [
     team_id: 2,
     details: [
       {
-        message: "Goodmorning @Team ",
-        time: "0:12",
-        id: 1,
-        profile_name: "Beah Kharmelette Abella",
+        message: "Hoy bwesit lage ka.",
+        time: "10:15 AM",
+        id: 3,
+        profile_name: "Clifford Ocay",
       },
       {
         message: "hoy hahahhhahahaha",
@@ -26,10 +26,34 @@ export const messages = [
         profile_name: "Clifford Ocay",
       },
       {
-        message: "Anong kasalanan ko Kuya?",
-        time: "10:16 AM",
+        message: "hoy hahahhhahahaha",
+        time: "10:14 AM",
         id: 2,
-        profile_name: "Shem Alexis Chavez",
+        profile_name: "Jeff Manzano",
+      },
+      {
+        message: "Hoy bwesit lage ka.",
+        time: "10:15 AM",
+        id: 3,
+        profile_name: "Clifford Ocay",
+      },
+      {
+        message: "Hoy bwesit lage ka.",
+        time: "10:15 AM",
+        id: 3,
+        profile_name: "Clifford Ocay",
+      },
+      {
+        message: "Hoy bwesit lage ka.",
+        time: "10:15 AM",
+        id: 3,
+        profile_name: "Clifford Ocay",
+      },
+      {
+        message: "Hoy bwesit lage ka.",
+        time: "10:15 AM",
+        id: 3,
+        profile_name: "Clifford Ocay",
       },
     ],
   },
@@ -39,10 +63,16 @@ export const messages = [
     team_id: 3,
     details: [
       {
-        message: "present",
-        time: "1:32 AM",
-        id: 1,
-        profile_name: "Flame Denise",
+        message: "PRESENT",
+        time: "2:45 AM",
+        id: 2,
+        profile_name: "Kit Mikhael Bagares",
+      },
+      {
+        message: "PRESENT",
+        time: "6:36 AM",
+        id: 3,
+        profile_name: "Kevin Dave Gerona",
       },
       {
         message: "PRESENT",
@@ -58,9 +88,27 @@ export const messages = [
       },
       {
         message: "PRESENT",
-        time: "9:17 AM",
+        time: "2:45 AM",
         id: 2,
-        profile_name: "Lyndee Lazarte",
+        profile_name: "Kit Mikhael Bagares",
+      },
+      {
+        message: "PRESENT",
+        time: "6:36 AM",
+        id: 3,
+        profile_name: "Kevin Dave Gerona",
+      },
+      {
+        message: "PRESENT",
+        time: "2:45 AM",
+        id: 2,
+        profile_name: "Kit Mikhael Bagares",
+      },
+      {
+        message: "PRESENT",
+        time: "6:36 AM",
+        id: 3,
+        profile_name: "Kevin Dave Gerona",
       },
     ],
   },
@@ -87,12 +135,6 @@ export const messages = [
         message: "bonito si ansina",
         time: "Tue, 1:06 PM",
       },
-      {
-        profile_name: "Juphet Vitualla",
-        id: 2,
-        message: "porqe kere yo contigo?",
-        time: "Tue, 1:11 PM",
-      },
     ],
   },
   {
@@ -100,6 +142,30 @@ export const messages = [
     user_profile: "All Employees",
     team_id: 4,
     details: [
+      {
+        id: 1,
+        profile_name: "Farsheed Atif",
+        message: "Hola mi amor!",
+        time: "03:11",
+      },
+      {
+        id: 2,
+        profile_name: "Usman Arif",
+        message: "Hola mi amor!",
+        time: "03:11",
+      },
+      {
+        id: 3,
+        profile_name: "Rizwan Siddiq",
+        message: "Hola mi amor!",
+        time: "03:11",
+      },
+      {
+        id: 4,
+        profile_name: "Misbah Nasir",
+        message: "Hola mi amor!",
+        time: "03:11",
+      },
       {
         id: 1,
         profile_name: "Farsheed Atif",
@@ -144,8 +210,32 @@ export const messages = [
         time: "03:11",
       },
       {
-        profile_name: "Sernel Asunto",
-        id: 3,
+        profile_name: "Patrick Carl Glinogo",
+        id: 4,
+        message: "Hola mi amor!",
+        time: "03:11",
+      },
+      {
+        profile_name: "Jenie Joy Tomalon",
+        id: 1,
+        message: "Hola mi amor!",
+        time: "03:11",
+      },
+      {
+        profile_name: "Leslie Marie Reyes",
+        id: 2,
+        message: "Hola mi amor!",
+        time: "03:11",
+      },
+      {
+        profile_name: "Patrick Carl Glinogo",
+        id: 4,
+        message: "Hola mi amor!",
+        time: "03:11",
+      },
+      {
+        profile_name: "Jenie Joy Tomalon",
+        id: 1,
         message: "Hola mi amor!",
         time: "03:11",
       },
@@ -192,6 +282,31 @@ export const directMessages = [
         time: "03:11",
         user: "not-you",
       },
+      {
+        message: "Good day this is Junne!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Junne!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Junne!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Junne!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Junne!",
+        time: "03:11",
+        user: "not-you",
+      },
     ],
   },
   {
@@ -204,6 +319,31 @@ export const directMessages = [
       { message: "Good day this is Leslie!", time: "03:11", user: "you" },
       { message: "Good day this is Leslie!", time: "03:11", user: "not-you" },
       { message: "Good day this is Leslie!", time: "03:11", user: "you" },
+      {
+        message: "Good day this is Leslie!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Leslie!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Leslie!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Leslie!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Leslie!",
+        time: "03:11",
+        user: "not-you",
+      },
       {
         message: "Good day this is Leslie!",
         time: "03:11",
@@ -226,6 +366,31 @@ export const directMessages = [
         time: "03:11",
         user: "not-you",
       },
+      {
+        message: "Good day this is Philip!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Philip!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Philip!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Philip!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Philip!",
+        time: "03:11",
+        user: "not-you",
+      },
     ],
   },
   {
@@ -243,6 +408,154 @@ export const directMessages = [
         time: "03:11",
         user: "not-you",
       },
+      {
+        message: "Good day this is Juphet!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Juphet!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Juphet!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Juphet!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Juphet!",
+        time: "03:11",
+        user: "not-you",
+      },
+    ],
+  },
+  {
+    id: "6",
+    user_name: "Maruelle Gulfan",
+    user_profile: "{girl_with_bangs}",
+    user_id: 6,
+    details: [
+      { message: "Good day this is Maruelle!", time: "03:11", user: "you" },
+      { message: "Good day this is Maruelle!", time: "03:11", user: "not-you" },
+      { message: "Good day this is Maruelle!", time: "03:11", user: "you" },
+      {
+        message: "Good day this is Maruelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Maruelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Maruelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Maruelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Maruelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Maruelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+    ],
+  },
+  {
+    id: "7",
+    user_name: "Ray Robin Gonzaga",
+    user_profile: "{girl_with_bangs}",
+    user_id: 7,
+    details: [
+      { message: "Good day this is Ray Robin!", time: "03:11", user: "you" },
+      { message: "Good day this is Ray Robin!", time: "03:11", user: "not-you" },
+      { message: "Good day this is Ray Robin!", time: "03:11", user: "you" },
+      {
+        message: "Good day this is Ray Robin!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Ray Robin!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Ray Robin!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Ray Robin!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Ray Robin!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Ray Robin!",
+        time: "03:11",
+        user: "not-you",
+      },
+    ],
+  },
+  {
+    id: "8",
+    user_name: "Annabelle Caamod",
+    user_profile: "{girl_with_bangs}",
+    user_id: 8,
+    details: [
+      { message: "Good day this is Annabelle!", time: "03:11", user: "you" },
+      { message: "Good day this is Annabelle!", time: "03:11", user: "not-you" },
+      { message: "Good day this is Annabelle!", time: "03:11", user: "you" },
+      {
+        message: "Good day this is Annabelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Annabelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Annabelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Annabelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Annabelle!",
+        time: "03:11",
+        user: "not-you",
+      },
+      {
+        message: "Good day this is Annabelle!",
+        time: "03:11",
+        user: "not-you",
+      },
     ],
   },
 ];
@@ -257,7 +570,8 @@ export const favoriteMessages = [
       { message: "Good day this is Reina!", time: "07:11", user: "you" },
       { message: "Good day this is Reina!", time: "08:12", user: "not-you" },
       { message: "Good day this is Reina!", time: "09:14", user: "you" },
-      { message: "Good day this is Reina!", time: "10:11", user: "not-you"},
+      { message: "Good day this is Reina!", time: "10:11", user: "not-you" },
+      { message: "Good day this is Reina!", time: "10:11", user: "not-you" },
     ],
   },
 ];

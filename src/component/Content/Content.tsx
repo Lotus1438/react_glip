@@ -52,6 +52,7 @@ const StyledContent = styled.div`
 const StyledCont = styled.div`
   height: 75%;
   overflow-y: auto;
+  scrollbar-color: gray transparent;
 `;
 
 const StyledFooter = styled.footer`

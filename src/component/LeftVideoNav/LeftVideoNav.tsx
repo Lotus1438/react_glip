@@ -1,12 +1,8 @@
-import styled from 'styled-components';
-import {
-    MdVideoCameraBack,
-    MdPlayCircleFilled
-  } from "react-icons/md";
-import { useState } from 'react';
+import styled from "styled-components";
+import { MdVideoCameraBack, MdPlayCircleFilled } from "react-icons/md";
+import { useState } from "react";
 
 function LeftVideoNav() {
-
   const [showMeeting, setShowMeeting] = useState(false);
   const [showRecording, setShowRecording] = useState(false);
 
@@ -19,48 +15,34 @@ function LeftVideoNav() {
 
   return (
     <StyledCol2 className="col2">
-    <StyledCol2Button>
-      VIDEO MEETING
-    </StyledCol2Button>
-    
+      <StyledCol2Button>VIDEO MEETING</StyledCol2Button>
 
-    <StyledUsers className="users">
-    <StyledShowUnread>
-    <MdVideoCameraBack size={20} />
-    <StyledDirectMessageButton
-        onClick={
-            showMeetings
-        }
-      >
-        FAVORITES
-      </StyledDirectMessageButton>
-    </StyledShowUnread>
-      {!showMeeting && <StyledUser
-      >
-        <ul>
-          Meetings
-        </ul>
-      </StyledUser>}
-      <StyledShowUnread>
-      <MdPlayCircleFilled size={15} />
-      <StyledDirectMessageButton
-        onClick={
-            showRecordings
-        }
-      >
-        DIRECT MESSAGES
-      </StyledDirectMessageButton>
-      </StyledShowUnread>
-      {!showRecording && <StyledUser
-      >
-        <ul>
-          Cloud recordings
-        </ul>
-      </StyledUser>}
-    </StyledUsers>
-
-  </StyledCol2>
-  )
+      <StyledUsers className="users">
+        <StyledShowUnread>
+          <MdVideoCameraBack size={20} />
+          <StyledDirectMessageButton onClick={showMeetings}>
+            FAVORITES
+          </StyledDirectMessageButton>
+        </StyledShowUnread>
+        {!showMeeting && (
+          <StyledUser>
+            <ul>Meetings</ul>
+          </StyledUser>
+        )}
+        <StyledShowUnread>
+          <MdPlayCircleFilled size={15} />
+          <StyledDirectMessageButton onClick={showRecordings}>
+            DIRECT MESSAGES
+          </StyledDirectMessageButton>
+        </StyledShowUnread>
+        {!showRecording && (
+          <StyledUser>
+            <ul>Cloud recordings</ul>
+          </StyledUser>
+        )}
+      </StyledUsers>
+    </StyledCol2>
+  );
 }
 const StyledCol2 = styled.div`
   width: 100%;
@@ -118,4 +100,4 @@ const StyledUser = styled.div`
   font-size: 18px;
 `;
 
-export default LeftVideoNav
+export default LeftVideoNav;

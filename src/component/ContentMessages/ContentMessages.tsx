@@ -16,6 +16,7 @@ function ContentMessages() {
         return (
           <StyledMsgContent key={msg.user_id}>
             <StyledText>
+            <StyledImgIcon src={girl} alt="Girl Avatar Icon" />
               <StyledTextUser>{msgs.user_name}</StyledTextUser>
               <StyledTextMessage>{msg.message}</StyledTextMessage>
             </StyledText>
@@ -24,7 +25,7 @@ function ContentMessages() {
         );
       });
     }
-  }
+  };
   const generateDirectMessage = () => {
     const msgs = directMessages.find((msg) => msg.user_id === id);
     if (msgs) {
@@ -32,9 +33,10 @@ function ContentMessages() {
         return (
           <StyledMsgContent key={msg.user_id}>
             <StyledText>
-              <div className="profile">
+              {/* <div className="profile">
                 <img src={msg.user === 'you' ? msgs.user_profile : msgs.recipient_profile } alt="tes" />
-              </div>
+              </div> */}
+            <StyledImgIcon src={girl_with_bangs} alt="Girl with bangs Avatar Icon" />
               <StyledTextUser>{msgs.user_name}</StyledTextUser>
               <StyledTextMessage>{msg.message}</StyledTextMessage>
             </StyledText>
@@ -52,15 +54,14 @@ function ContentMessages() {
         return (
           <StyledMsgContent key={msg.team_id}>
             <StyledText>
-              <StyledTextUser>
-                {msg.profile_name}
-              </StyledTextUser>
+            <StyledImgIcon src={hacker} alt="Hacker Avatar Icon" />
+              <StyledTextUser>{msg.profile_name}</StyledTextUser>
               <StyledTextMessage>{msg.message}</StyledTextMessage>
             </StyledText>
             <StyledTime>{msg.time}</StyledTime>
           </StyledMsgContent>
         );
-      })
+      });
     }
   };
 
@@ -68,10 +69,10 @@ function ContentMessages() {
     <div>
       <StyledMessages className="messages">
         <StyledMessage className="message">
-        {generateFavoriteMessage()}
-            {type === "direct" && generateDirectMessage()}
-            {type === "team" && generateTeamMessage()}
-            {type === "" && <div>No message found!</div>}
+          {generateFavoriteMessage()}
+          {type === "direct" && generateDirectMessage()}
+          {type === "team" && generateTeamMessage()}
+          {type === "" && <div>No message found!</div>}
         </StyledMessage>
       </StyledMessages>
     </div>
@@ -115,6 +116,7 @@ const StyledText = styled.text`
 
 const StyledTextMessage = styled.p`
   font-size: 16px;
+  margin-left: 41px;
 `;
 
 const StyledTextUser = styled.p`
@@ -126,6 +128,15 @@ const StyledTime = styled.p`
   float: right;
   font-size: 12px;
   color: rgb(0, 0, 0, 0.5);
+`;
+const StyledImgIcon = styled.img`
+  width: 29px;
+  text-align: center;
+  float: left;
+  margin-right: 12px;
+    span{
+      text-indent: 10rem;
+    }
 `;
 
 export default ContentMessages;
