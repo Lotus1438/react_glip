@@ -118,6 +118,9 @@ const StyledA = styled.a`
   font-size: 16px;
   text-decoration: underline;
   margin-top: 10px;
+   &:active {
+    color: blue;
+   }
 `;
 const StyledButton = styled.button`
   border: none;

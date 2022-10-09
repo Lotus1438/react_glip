@@ -22,6 +22,7 @@ function Container() {
     </div>
   );
 }
+
 const StyledContainer = styled.div`
   width: 100vw;
   display: flex;
