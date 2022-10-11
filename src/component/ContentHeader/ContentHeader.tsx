@@ -9,7 +9,6 @@ function ContentHeader() {
   const context = useContext(AppContext);
   const { state } = context;
   const { details } = state;
-  console.log("%c 🛎️: ContentHeader -> details ", "font-size:16px;background-color:#7953c0;color:white;", details)
 
   return (
     <StyledContentHeader className="content-header">
@@ -51,6 +50,7 @@ const StyledP = styled.p`
 const StyledIconsLeft = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   .icon_cont {
     margin-left: 1rem;
@@ -60,6 +60,8 @@ const StyledIconsLeft = styled.div`
     }
   }
 `;
-const StyledIconsRight = styled.div``;
+const StyledIconsRight = styled.div`
+cursor: pointer;
+`;
 
 export default ContentHeader;

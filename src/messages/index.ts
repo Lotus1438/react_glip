@@ -104,12 +104,6 @@ export const messages = [
         id: 2,
         profile_name: "Kit Mikhael Bagares",
       },
-      {
-        message: "PRESENT",
-        time: "6:36 AM",
-        id: 3,
-        profile_name: "Kevin Dave Gerona",
-      },
     ],
   },
   {

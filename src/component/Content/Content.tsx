@@ -19,8 +19,6 @@ function Content() {
     }
   }, [ref])
   
-
-
   return (
     <StyledContent className="content">
       <StyledHeader>

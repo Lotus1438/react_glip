@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import girl from "../../imgs/girl.png";
-import { MdChevronRight, MdChevronLeft, MdSearch, MdCircle } from "react-icons/md";
+import {
+  MdChevronRight,
+  MdChevronLeft,
+  MdSearch,
+  MdCircle,
+} from "react-icons/md";
 import { useState } from "react";
 
 function Header() {
@@ -20,12 +25,20 @@ function Header() {
       </span>
       {showProfile && (
         <StyledProfile className="profile">
-          <p>Reina Mates</p>
+          <StyledImgProfile
+            className="img"
+            src={girl}
+            alt="Girl Avatar Profile"
+          />
+          <ul>
+          <li>Reina Mates</li>
           <a href="#">View profile</a>
           <hr />
-          <p>Share status</p>
-          <p>Invisible</p>
-          <p>Sign out</p>
+          <li>Share status</li>
+        
+          <li><MdCircle size="10" color="gray" /> Invisible</li>
+          <li>Sign out</li>
+          </ul>
         </StyledProfile>
       )}
       <StyledP>DNA Micro</StyledP>
@@ -58,6 +71,7 @@ const StyledHeader = styled.header`
   display: flex;
   text-align: center;
   padding-top: 12px;
+  position: relative;
   span {
     position: relative;
     top: 32px;
@@ -70,14 +84,28 @@ const StyledProfileButton = styled.button`
   cursor: pointer;
 `;
 const StyledProfile = styled.div`
-  padding: 0 18px;
-  width: 15rem;
+  padding: 31px 18px;
+  width: 17rem;
   background-color: white;
-  position: relative;
-  top: 48px;
-  left: -44px;
-  box-shadow: 5px 5px 5px #b9b9b9;
+  position: absolute;
+  top: 58px;
+  left: 36px;
+  box-shadow: 5px 5px 5px #e3dddd;
   z-index: 1;
+  img {
+    margin-left: 0;
+  }
+  li {
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: blue;
+    margin-left: -93px;
+  }
 `;
 const StyledImgProfile = styled.img`
   width: 40px;
@@ -115,6 +143,7 @@ const StyledButton = styled.button`
 const StyledInput = styled.input`
   margin-top: 1px;
   width: 27rem;
+  height: 32px;
   border: none;
   float: left;
   background-color: #a1abb3;

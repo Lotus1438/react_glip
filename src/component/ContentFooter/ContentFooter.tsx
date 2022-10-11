@@ -23,22 +23,20 @@ function ContentFooter(props: PropTypes) {
     message: props.message,
   };
   const [message, setMessage] = useState(initState);
-  const [textWidth, setTextWidth] = useState(messageWidth)
-  
+  const [textWidth, setTextWidth] = useState(messageWidth);
+
   useEffect(() => {
     console.log("messageWidth", messageWidth);
-    
-    setTextWidth(messageWidth - 20)
-  }, [messageWidth])
-  
-  
 
-  const submitMessage = () => {
-    setMessage({
-      ...message,
-      message: message?.inputValue,
-    });
-  };
+    setTextWidth(messageWidth - 20);
+  }, [messageWidth]);
+
+  // const submitMessage = () => {
+  //   setMessage({
+  //     ...message,
+  //     message: message?.inputValue,
+  //   });
+  // };
 
   return (
     <StyledFooter className="content-footer">
@@ -54,9 +52,7 @@ function ContentFooter(props: PropTypes) {
       </StyledFooterIcons>
       <StlyedTextarea
         style={{
-          width: textWidth
-            ? `${textWidth}px`
-            : "100%",
+          width: textWidth ? `${textWidth}px` : "100%",
         }}
       >
         {message.message}
@@ -72,7 +68,7 @@ function ContentFooter(props: PropTypes) {
           }}
         ></StyledTextArea>
         <a href="#">
-          <RiSendPlaneFill size={25} />
+          <RiSendPlaneFill size={25} color="gray" />
         </a>
       </StlyedTextarea>
     </StyledFooter>

@@ -137,7 +137,7 @@ function LeftNav() {
 
         <StyledCol2 className="col2">
           <StyledCol2Button>
-            <GoMention />
+            <GoMention color="rgb(255, 136, 0)"/>
             Mentions
           </StyledCol2Button>
           <StyledCol2Button>
