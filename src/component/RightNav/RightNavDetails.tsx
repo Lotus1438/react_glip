@@ -3,11 +3,10 @@ import styled from "styled-components";
 import girl from "../../imgs/girl.png";
 import hacker from "../../imgs/hacker.png";
 import sticky_note from "../../imgs/sticky-note.png";
-// import file from '../../imgs/folder.png';
-// import image from '../../imgs/picture.png';
+import file from '../../imgs/folder.png';
+import image from '../../imgs/picture.png';
 import { MdOutlineMoreHoriz, MdKeyboardTab, MdArrowRightAlt } from "react-icons/md";
 import { AiOutlineUserAdd } from "react-icons/ai";
-import { useState } from "react";
 
 interface Iprops {
     details: string,
@@ -65,27 +64,26 @@ const RightNavDetails = ({details, onChangeDisplay}: Iprops) => {
           </StyledPinContent>}
     
           {details === 'files' && <StyledPinContent>
-            <StyledSticky src={sticky_note} alt="Sticky note Icon" />
+            <StyledSticky src={file} alt="Sticky note Icon" />
             <h4>No files Yet</h4>
             <StyledPinP>
-              Files informaton and it will appear here so that you can reference it
-              later.
+            Files that you share or get shared with you in conversations will appear here.
             </StyledPinP>
           </StyledPinContent>}
     
           {details === 'tasks' && <StyledPinContent>
-            <StyledSticky src={sticky_note} alt="Sticky note Icon" />
-            <h4>Tasks</h4>
+            <StyledSticky src={image} alt="Sticky note Icon" />
+            <h4>No tasks Yet</h4>
             <StyledPinP>
-              Pin informaton and it will appear here so that you can reference it
-              later.
+            Images that get shared in your conversation will appear here.
             </StyledPinP>
           </StyledPinContent>}
     
+          {details === 'files' && 
           <StyledFooter>
             <p>All files</p>
             <MdArrowRightAlt size={25} color="#014770" />
-          </StyledFooter>
+          </StyledFooter>}
         </StyledContent>
       );
 }

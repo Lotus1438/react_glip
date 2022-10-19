@@ -50,11 +50,27 @@ const StyledContent = styled.div`
 const StyledCont = styled.div`
   height: 75%;
   overflow-y: auto;
-  scrollbar-color: gray transparent;
+  &::-webkit-scrollbar {
+    scrollbar-color: gray;
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track{
+    border: none;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    border-color: gray;
+    background-color: gray;
+    /* border-style: solid; */
+  }
+  &::-webkit-scrollbar-button {
+    /* display: none; */
+  }
 `;
 
 const StyledFooter = styled.footer`
-  border-top: 1px solid rgb(0, 0, 0, 0.2);
+  border-top: 1px solid rgb(0, 0, 0, 0.1);
   bottom: 0px;
 `;
 

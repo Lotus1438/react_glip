@@ -24,26 +24,26 @@ function LeftNav() {
   const { state, setState } = context;
 
   const users = [
-    { name: "Jean Pretzy Rim", id: 1 },
-    { name: "Junne Toral", id: 2 },
-    { name: "Leslie Marie Reyes", id: 3 },
-    { name: "Philip John Batulan", id: 4 },
-    { name: "Juphet Vitualla", id: 5 },
-    { name: "Maruelle Gulfan", id: 6 },
-    { name: "Ray Robin Gonzaga", id: 7 },
-    { name: "Annabelle Caamod", id: 8 },
+    { name: " Jean Pretzy Rim", id: 1 },
+    { name: " Junne Toral", id: 2 },
+    { name: " Leslie Marie Reyes", id: 3 },
+    { name: " Philip John Batulan", id: 4 },
+    { name: " Juphet Vitualla", id: 5 },
+    { name: " Maruelle Gulfan", id: 6 },
+    { name: " Ray Robin Gonzaga", id: 7 },
+    { name: " Annabelle Caamod", id: 8 },
   ];
 
   const teams = [
-    { team: "TEAMBANGAN-weighs", team_id: 1 },
-    { team: ".{dna:micro}.", team_id: 2 },
-    { team: "WFH", team_id: 3 },
-    { team: "All Employees", team_id: 4 },
-    { team: "Team Vitamins", team_id: 5 },
+    { team: " TEAMBANGAN-weighs", team_id: 1 },
+    { team: " .{dna:micro}.", team_id: 2 },
+    { team: " WFH", team_id: 3 },
+    { team: " All Employees", team_id: 4 },
+    { team: " Team Vitamins", team_id: 5 },
   ];
 
   const favorites = [
-    { favorite: "Reina Mates", favorite_id: 1 }
+    { favorite: " Reina Mates", favorite_id: 1 }
   ];
 
   const handlePressTeams = (id: number) => {
@@ -216,7 +216,7 @@ function LeftNav() {
                         onClick={() => {
                           handlePressTeams(team.team_id);
                         }}
-                        href="#"
+                        // href="#"
                       >
                         <MdCircle size={10} />
                         {team.team}
@@ -288,7 +288,7 @@ const StyledUsers = styled.div`
   position: absolute;
   font-size: 20px;
   padding: 6px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   scrollbar-color: gray;
     width: 100%;
 `;

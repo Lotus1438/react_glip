@@ -26,7 +26,7 @@ function ContentFooter(props: PropTypes) {
   const [textWidth, setTextWidth] = useState(messageWidth);
 
   useEffect(() => {
-    console.log("messageWidth", messageWidth);
+    // console.log("messageWidth", messageWidth);
 
     setTextWidth(messageWidth - 20);
   }, [messageWidth]);
@@ -67,7 +67,7 @@ function ContentFooter(props: PropTypes) {
             });
           }}
         ></StyledTextArea>
-        <a href="#">
+        <a>
           <RiSendPlaneFill size={25} color="gray" />
         </a>
       </StlyedTextarea>
@@ -83,6 +83,7 @@ const StyledTextArea = styled.textarea`
   height: 2.5rem;
   margin-top: 20px;
   margin-left: 1rem;
+  padding-left: 1rem;
   font-size: 20px;
   line-height: 47px;
   overflow: hidden;
